@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NKE — Careers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0A0A0A; color: #FFFFFF; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px; }
+        .header { position: fixed; top: 0; left: 0; width: 100%; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); }
+        .logo { font-size: 28px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: #FFFFFF; }
+        .logo span { color: #FF3B30; }
+        .nav a { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin-left: 30px; opacity: 0.7; color: #FFFFFF; text-decoration: none; transition: opacity 0.3s; }
+        .nav a:hover { opacity: 1; }
+        .page-hero { padding: 120px 0 60px; text-align: center; background: #0A0A0A; }
+        .page-title { font-size: 56px; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; }
+        .page-title span { color: #FF3B30; }
+        .career-list { max-width: 800px; margin: 40px auto; }
+        .career-item { display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.3s; }
+        .career-item:hover { border-color: #FF3B30; padding-left: 10px; }
+        .career-item h3 { font-size: 18px; font-weight: 600; }
+        .career-item p { opacity: 0.5; font-size: 14px; }
+        .career-item .badge { color: #FF3B30; font-size: 14px; font-weight: 700; }
+        .back-link { display: inline-block; margin-top: 40px; color: #FF3B30; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .footer { padding: 60px 0 30px; background: #0A0A0A; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
+        .footer-brand { font-size: 24px; font-weight: 800; text-transform: uppercase; letter-spacing: 4px; }
+        .footer-brand span { color: #FF3B30; }
+        .footer-links { display: flex; gap: 30px; }
+        .footer-links a { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.5; color: #FFFFFF; text-decoration: none; transition: opacity 0.3s; }
+        .footer-links a:hover { opacity: 1; }
+        .footer-disclaimer { width: 100%; font-size: 11px; opacity: 0.3; text-align: center; margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .counter-section { padding: 40px 0; background: #0A0A0A; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .counter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 600px; margin: 0 auto; text-align: center; }
+        .counter-item { padding: 20px; background: rgba(255,255,255,0.03); border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); }
+        .counter-number { font-size: 48px; font-weight: 800; color: #FF3B30; }
+        .counter-label { font-size: 12px; text-transform: uppercase; letter-spacing: 3px; opacity: 0.6; margin-top: 4px; }
+        .counter-timestamp { font-size: 10px; opacity: 0.3; margin-top: 8px; font-family: 'Courier New', monospace; }
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            .page-title { font-size: 36px; }
+            .career-item { flex-direction: column; gap: 8px; }
+            .counter-grid { grid-template-columns: 1fr; gap: 20px; }
+            .nav a { margin-left: 16px; font-size: 11px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">NKE<span>.</span></a>
+        <nav class="nav">
+            <a href="about.html">About</a>
+            <a href="swoosh.html">Swoosh</a>
+            <a href="careers.html">Careers</a>
+        </nav>
+    </header>
+
+    <div class="page-hero">
+        <h1 class="page-title"><span>Careers</span></h1>
+        <p style="opacity:0.6;font-size:18px;">Join the Swoosh movement</p>
+    </div>
+
+    <div class="container">
+        <div class="career-list">
+            <div class="career-item">
+                <div><h3>3D Sneaker Designer</h3><p>Blender / Unity / Web3</p></div>
+                <span class="badge">Remote</span>
+            </div>
+            <div class="career-item">
+                <div><h3>Web3 Developer</h3><p>Solana / Rust / NFT</p></div>
+                <span class="badge">Remote</span>
+            </div>
+            <div class="career-item">
+                <div><h3>Community & Swoosh Lead</h3><p>Discord / Telegram / Events</p></div>
+                <span class="badge">Remote</span>
+            </div>
+            <div class="career-item">
+                <div><h3>Virtual Product Manager</h3><p>Sneakers / NFT / Gaming</p></div>
+                <span class="badge">Remote</span>
+            </div>
+        </div>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+
+    <!-- COUNTER -->
+    <section class="counter-section">
+        <div class="container">
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <div class="counter-number counter-visitors">119,800</div>
+                    <div class="counter-label">Unique Visitors</div>
+                    <div class="counter-timestamp counter-visitor-time">Since 2026</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number counter-clients">36</div>
+                    <div class="counter-label">Active Clients</div>
+                    <div class="counter-timestamp counter-client-time">Verified on-chain</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">NKE<span>.</span></div>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="swoosh.html">Swoosh</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="https://t.me/nke_token" target="_blank">Telegram</a>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                ⚠️ NKE is an independent SPL token. Not affiliated with Nike Inc.
+            </div>
+        </div>
+    </footer>
+
+    <script src="counter.js"></script>
+</body>
+</html>
