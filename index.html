@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <style>
+        /* ===== ВСЕ ТЕ ЖЕ СТИЛИ ЧТО ВЫШЕ ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: #0A0A0A; color: #FFFFFF; line-height: 1.6; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
@@ -39,10 +40,44 @@
         .wallet-btn { background: transparent; border: 2px solid #FF3B30; color: #FF3B30; padding: 8px 20px; border-radius: 4px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
         .wallet-btn:hover { background: #FF3B30; color: #0A0A0A; }
         
-        /* HERO */
-        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; background: url('model-runner.jpg') center/cover no-repeat; }
-        .hero::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }
-        .hero-content { position: relative; z-index: 1; max-width: 900px; padding: 0 20px; }
+        /* HERO with VIDEO */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 20px;
+        }
         .hero-badge { display: inline-block; background: rgba(255, 59, 48, 0.2); padding: 6px 20px; border-radius: 4px; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #FF3B30; margin-bottom: 30px; font-weight: 600; }
         .hero-title { font-size: 120px; font-weight: 800; line-height: 1; margin-bottom: 20px; text-transform: uppercase; letter-spacing: -4px; }
         .hero-title span { color: #FF3B30; }
@@ -64,12 +99,43 @@
         .feature-icon { font-size: 32px; margin-bottom: 8px; }
         .feature-title { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
         
-        /* SWOOSH PLATFORM */
-        .swoosh { padding: 120px 0; background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('model-basketball.jpg') center/cover no-repeat; background-attachment: fixed; }
+        /* ECOSYSTEM */
+        .ecosystem { padding: 120px 0; background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('photo-juggling-brown.jpg') center/cover no-repeat; background-attachment: fixed; }
         .section-header { text-align: center; margin-bottom: 60px; }
         .section-header h2 { font-size: 56px; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; }
         .section-header h2 span { color: #FF3B30; }
         .section-header p { font-size: 18px; opacity: 0.7; margin-top: 12px; }
+        .brand-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; }
+        .brand-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); padding: 30px 20px; border-radius: 4px; text-align: center; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .brand-card:hover { border-color: #FF3B30; transform: translateY(-5px); }
+        .brand-logo { font-size: 36px; margin-bottom: 12px; font-weight: 700; }
+        .brand-name { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; }
+        .brand-price { font-size: 12px; color: #FF3B30; margin-top: 4px; }
+        
+        /* SWOOSH with VIDEO 2 */
+        .swoosh { padding: 120px 0; position: relative; overflow: hidden; }
+        .swoosh-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+        .swoosh-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 1;
+        }
+        .swoosh .container { position: relative; z-index: 2; }
         .swoosh-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .swoosh-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); padding: 40px 30px; border-radius: 4px; text-align: center; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.1); }
         .swoosh-card:hover { border-color: #FF3B30; transform: translateY(-10px); }
@@ -77,8 +143,30 @@
         .swoosh-card h3 { font-size: 24px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
         .swoosh-card p { font-size: 16px; opacity: 0.7; }
         
-        /* STAKING */
-        .staking { padding: 120px 0; background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('model-training.jpg') center/cover no-repeat; background-attachment: fixed; }
+        /* STAKING with VIDEO 3 */
+        .staking { padding: 120px 0; position: relative; overflow: hidden; }
+        .staking-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+        .staking-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1;
+        }
+        .staking .container { position: relative; z-index: 2; }
         .staking-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .pool-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); padding: 40px 30px; border-radius: 4px; text-align: center; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.1); }
         .pool-card:hover { border-color: #FF3B30; background: rgba(255, 59, 48, 0.05); }
@@ -91,14 +179,13 @@
         .pool-btn { display: inline-block; padding: 12px 32px; border: 2px solid #FF3B30; color: #FF3B30; border-radius: 4px; transition: all 0.3s ease; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; font-weight: 600; }
         .pool-btn:hover { background: #FF3B30; color: #0A0A0A; }
         
-        /* SNEAKER GALLERY */
-        .sneakers { padding: 100px 0; background: #0A0A0A; }
-        .sneaker-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-        .sneaker-card { background: rgba(255, 255, 255, 0.03); padding: 20px; border-radius: 4px; text-align: center; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.05); }
-        .sneaker-card:hover { border-color: #FF3B30; transform: translateY(-5px); }
-        .sneaker-card img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 12px; }
-        .sneaker-card h4 { font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
-        .sneaker-card .price { color: #FF3B30; font-weight: 700; margin-top: 4px; }
+        /* BONUS */
+        .bonus { padding: 100px 0; background: #0A0A0A; }
+        .bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .bonus-image img { width: 100%; height: 400px; object-fit: cover; border-radius: 4px; }
+        .bonus-text h2 { font-size: 48px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
+        .bonus-text h2 span { color: #FF3B30; }
+        .bonus-text p { font-size: 18px; opacity: 0.7; margin-top: 16px; }
         
         /* COUNTER */
         .counter-section { padding: 80px 0; background: #0A0A0A; border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
@@ -131,7 +218,8 @@
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
             .swoosh-grid { grid-template-columns: repeat(2, 1fr); }
             .staking-grid { grid-template-columns: repeat(2, 1fr); }
-            .sneaker-grid { grid-template-columns: repeat(2, 1fr); }
+            .bonus-grid { grid-template-columns: 1fr; }
+            .brand-grid { grid-template-columns: repeat(3, 1fr); }
             .counter-grid { grid-template-columns: 1fr; gap: 30px; }
         }
         @media (max-width: 768px) {
@@ -142,7 +230,7 @@
             .hero-stats { gap: 30px; flex-wrap: wrap; }
             .swoosh-grid { grid-template-columns: 1fr; }
             .staking-grid { grid-template-columns: 1fr; }
-            .sneaker-grid { grid-template-columns: 1fr 1fr; }
+            .brand-grid { grid-template-columns: repeat(2, 1fr); }
             .about-features { grid-template-columns: 1fr; }
             .footer-content { flex-direction: column; text-align: center; }
             .counter-number { font-size: 48px; }
@@ -150,7 +238,7 @@
         @media (max-width: 480px) {
             .hero-title { font-size: 36px; letter-spacing: -1px; }
             .hero-subtitle { font-size: 14px; letter-spacing: 3px; }
-            .sneaker-grid { grid-template-columns: 1fr; }
+            .brand-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
         }
     </style>
 </head>
@@ -182,8 +270,11 @@
         </div>
     </header>
 
-    <!-- HERO -->
+    <!-- HERO (видео 1) -->
     <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="video-crop-top-beige.mp4" type="video/mp4">
+        </video>
         <div class="hero-content">
             <div class="hero-badge">⚡ Just Token It</div>
             <h1 class="hero-title">JUST <span>TOKEN</span> IT</h1>
@@ -196,12 +287,12 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ABOUT (фото 1) -->
     <section class="about" id="about">
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
-                    <img src="model-sneaker.jpg" alt="NKE Virtual Sneaker" loading="lazy">
+                    <img src="photo-running-khaki.jpg" alt="Nike Running" loading="lazy">
                 </div>
                 <div class="about-text">
                     <h2>NKE — <span>Not a Sneaker</span></h2>
@@ -217,8 +308,30 @@
         </div>
     </section>
 
-    <!-- SWOOSH PLATFORM -->
+    <!-- ECOSYSTEM (фото 2 - фон) -->
+    <section class="ecosystem" id="ecosystem">
+        <div class="container">
+            <div class="section-header">
+                <h2>BYT <span>Ecosystem</span></h2>
+                <p>12 brand tokens in one ecosystem</p>
+            </div>
+            <div class="brand-grid">
+                <div class="brand-card"><div class="brand-logo">NKE</div><div class="brand-name">Nike</div><div class="brand-price">$0.01</div></div>
+                <div class="brand-card"><div class="brand-logo">DKNY</div><div class="brand-name">Donna Kahn NY</div><div class="brand-price">$1.00</div></div>
+                <div class="brand-card"><div class="brand-logo">JVC</div><div class="brand-name">JVC</div><div class="brand-price">$0.01</div></div>
+                <div class="brand-card"><div class="brand-logo">ZARA</div><div class="brand-name">ZARA</div><div class="brand-price">$0.01</div></div>
+                <div class="brand-card"><div class="brand-logo">GUCCI</div><div class="brand-name">GUCCI</div><div class="brand-price">$0.01</div></div>
+                <div class="brand-card"><div class="brand-logo">PRADA</div><div class="brand-name">PRADA</div><div class="brand-price">$0.01</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SWOOSH (видео 2) -->
     <section class="swoosh" id="swoosh">
+        <video class="swoosh-video" autoplay muted loop playsinline>
+            <source src="video-gray-black.mp4" type="video/mp4">
+        </video>
+        <div class="swoosh-overlay"></div>
         <div class="container">
             <div class="section-header">
                 <h2><span>Swoosh</span> Platform</h2>
@@ -228,56 +341,28 @@
                 <div class="swoosh-card">
                     <div class="icon">👟</div>
                     <h3>Design</h3>
-                    <p>Create virtual sneakers using Swoosh tools. Customize colors, materials, and styles [citation:6]</p>
+                    <p>Create virtual sneakers using Swoosh tools. Customize colors, materials, and styles.</p>
                 </div>
                 <div class="swoosh-card">
                     <div class="icon">💰</div>
                     <h3>Earn</h3>
-                    <p>Get royalties from your designs. NKE token holders get early access to drops [citation:12]</p>
+                    <p>Get royalties from your designs. NKE token holders get early access to drops.</p>
                 </div>
                 <div class="swoosh-card">
                     <div class="icon">🎮</div>
                     <h3>Play</h3>
-                    <p>Use your virtual sneakers in games and immersive experiences. Physical product redemption [citation:3]</p>
+                    <p>Use your virtual sneakers in games and immersive experiences. Physical product redemption.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SNEAKER GALLERY -->
-    <section class="sneakers" id="sneakers">
-        <div class="container">
-            <div class="section-header">
-                <h2>Virtual <span>Sneakers</span></h2>
-                <p>Digital collections coming soon</p>
-            </div>
-            <div class="sneaker-grid">
-                <div class="sneaker-card">
-                    <img src="https://placehold.co/300x200/1A1A1A/FF3B30?text=NKE+Air" alt="Virtual Air">
-                    <h4>NKE Air</h4>
-                    <div class="price">0.5 NKE</div>
-                </div>
-                <div class="sneaker-card">
-                    <img src="https://placehold.co/300x200/1A1A1A/FF3B30?text=NKE+Dunk" alt="Virtual Dunk">
-                    <h4>NKE Dunk</h4>
-                    <div class="price">0.8 NKE</div>
-                </div>
-                <div class="sneaker-card">
-                    <img src="https://placehold.co/300x200/1A1A1A/FF3B30?text=NKE+Vapor" alt="Virtual Vapor">
-                    <h4>NKE Vapor</h4>
-                    <div class="price">1.2 NKE</div>
-                </div>
-                <div class="sneaker-card">
-                    <img src="https://placehold.co/300x200/1A1A1A/FF3B30?text=NKE+Alpha" alt="Virtual Alpha">
-                    <h4>NKE Alpha</h4>
-                    <div class="price">2.0 NKE</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- STAKING -->
+    <!-- STAKING (видео 3) -->
     <section class="staking" id="staking">
+        <video class="staking-video" autoplay muted loop playsinline>
+            <source src="video-white-gray.mp4" type="video/mp4">
+        </video>
+        <div class="staking-overlay"></div>
         <div class="container">
             <div class="section-header">
                 <h2>Staking <span>NKE</span></h2>
@@ -304,6 +389,21 @@
                     <div class="apy">40% <small>APY</small></div>
                     <p class="pool-desc">Exclusive for Swoosh designers</p>
                     <a href="#" class="pool-btn">Stake Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BONUS (фото 5) -->
+    <section class="bonus" id="bonus">
+        <div class="container">
+            <div class="bonus-grid">
+                <div class="bonus-image">
+                    <img src="photo-basketball-chair.jpg" alt="Nike Basketball" loading="lazy">
+                </div>
+                <div class="bonus-text">
+                    <h2>Built for <span>Athletes</span></h2>
+                    <p>NKE token is designed for the sports community. From virtual sneakers to real-world experiences, we're building the future of athletic culture on the blockchain.</p>
                 </div>
             </div>
         </div>
