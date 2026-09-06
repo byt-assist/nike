@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NKE — Just Token It | BYT Ecosystem</title>
-    <meta name="description" content="NKE is the athletic token of the BYT ecosystem with virtual sneaker design and Swoosh platform.">
+    <title>NIKE — Just Token It | BYT Ecosystem</title>
+    <meta name="description" content="NIKE is the athletic token of the BYT ecosystem with virtual sneaker design and Swoosh platform.">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     
@@ -82,7 +82,7 @@
         .hero-title { font-size: 120px; font-weight: 800; line-height: 1; margin-bottom: 20px; text-transform: uppercase; letter-spacing: -4px; }
         .hero-title span { color: #FF3B30; }
         .hero-subtitle { font-size: 20px; font-weight: 300; letter-spacing: 6px; text-transform: uppercase; opacity: 0.8; margin-bottom: 50px; }
-        .hero-stats { display: flex; justify-content: center; gap: 60px; }
+        .hero-stats { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
         .stat { text-align: center; }
         .stat-value { font-size: 36px; font-weight: 800; color: #FF3B30; }
         .stat-label { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.6; margin-top: 4px; }
@@ -179,6 +179,17 @@
         .pool-btn { display: inline-block; padding: 12px 32px; border: 2px solid #FF3B30; color: #FF3B30; border-radius: 4px; transition: all 0.3s ease; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; font-weight: 600; }
         .pool-btn:hover { background: #FF3B30; color: #0A0A0A; }
         
+        /* CONTRACT ADDRESS */
+        .contract-section { padding: 60px 0; background: #0A0A0A; border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .contract-box { max-width: 900px; margin: 0 auto; text-align: center; padding: 30px; background: rgba(255, 255, 255, 0.03); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .contract-box h3 { font-size: 18px; text-transform: uppercase; letter-spacing: 3px; opacity: 0.6; margin-bottom: 12px; }
+        .contract-box code { font-family: 'Courier New', monospace; font-size: 18px; color: #FF3B30; word-break: break-all; display: block; margin: 16px 0; padding: 12px; background: rgba(0,0,0,0.3); border-radius: 4px; border: 1px solid rgba(255,59,48,0.2); }
+        .contract-box .copy-btn { background: #FF3B30; border: none; color: #0A0A0A; padding: 8px 24px; border-radius: 4px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+        .contract-box .copy-btn:hover { background: #ff6b63; }
+        .contract-box .links { margin-top: 16px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .contract-box .links a { font-size: 14px; color: #FF3B30; text-decoration: underline; opacity: 0.7; transition: opacity 0.3s; }
+        .contract-box .links a:hover { opacity: 1; }
+        
         /* BONUS */
         .bonus { padding: 100px 0; background: #0A0A0A; }
         .bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
@@ -201,6 +212,9 @@
         .ticker-item { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; padding: 0 40px; opacity: 0.7; font-weight: 300; }
         .ticker-item span { color: #FF3B30; font-weight: 700; }
         @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        
+        /* POOLS SECTION (NEW) */
+        .pools-section { padding: 80px 0; background: #0A0A0A; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
         
         /* FOOTER */
         .footer { padding: 60px 0 30px; background: #0A0A0A; }
@@ -227,13 +241,15 @@
             .header { padding: 16px 20px; }
             .nav a { margin-left: 16px; font-size: 11px; }
             .hero-title { font-size: 48px; letter-spacing: -2px; }
-            .hero-stats { gap: 30px; flex-wrap: wrap; }
+            .hero-stats { gap: 20px; }
             .swoosh-grid { grid-template-columns: 1fr; }
             .staking-grid { grid-template-columns: 1fr; }
             .brand-grid { grid-template-columns: repeat(2, 1fr); }
             .about-features { grid-template-columns: 1fr; }
             .footer-content { flex-direction: column; text-align: center; }
             .counter-number { font-size: 48px; }
+            .contract-box code { font-size: 14px; }
+            .contract-box .links { flex-direction: column; gap: 10px; }
         }
         @media (max-width: 480px) {
             .hero-title { font-size: 36px; letter-spacing: -1px; }
@@ -245,7 +261,7 @@
 <body>
     <!-- HEADER -->
     <header class="header" id="header">
-        <a href="index.html" class="logo">NKE<span>.</span></a>
+        <a href="index.html" class="logo">NIKE<span>.</span></a>
         <nav class="nav">
             <a href="about.html">About</a>
             <a href="swoosh.html">Swoosh</a>
@@ -278,11 +294,12 @@
         <div class="hero-content">
             <div class="hero-badge">⚡ Just Token It</div>
             <h1 class="hero-title">JUST <span>TOKEN</span> IT</h1>
-            <p class="hero-subtitle">Nike Token — Gateway to Virtual Sneakers & Swoosh Platform</p>
+            <p class="hero-subtitle">NIKE Token — Gateway to Virtual Sneakers & Swoosh Platform</p>
             <div class="hero-stats">
-                <div class="stat"><div class="stat-value">$0.01</div><div class="stat-label">NKE Price</div></div>
-                <div class="stat"><div class="stat-value">$500M</div><div class="stat-label">Market Cap</div></div>
-                <div class="stat"><div class="stat-value">42</div><div class="stat-label">Holders</div></div>
+                <div class="stat"><div class="stat-value">$1.00</div><div class="stat-label">NIKE Price</div></div>
+                <div class="stat"><div class="stat-value">$10B</div><div class="stat-label">Market Cap</div></div>
+                <div class="stat"><div class="stat-value">8</div><div class="stat-label">Holders</div></div>
+                <div class="stat"><div class="stat-value">$304M</div><div class="stat-label">Liquidity</div></div>
             </div>
         </div>
     </section>
@@ -292,10 +309,10 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
-                    <img src="photo-running-khaki.jpg" alt="Nike Running" loading="lazy">
+                    <img src="photo-running-khaki.jpg" alt="NIKE Running" loading="lazy">
                 </div>
                 <div class="about-text">
-                    <h2>NKE — <span>Not a Sneaker</span></h2>
+                    <h2>NIKE — <span>Not a Sneaker</span></h2>
                     <p>The athletic token of the BYT ecosystem with virtual sneaker design, Swoosh platform, and digital community. Built for athletes, creators, and collectors who value innovation and movement.</p>
                     <div class="about-features">
                         <div class="feature"><div class="feature-icon">👟</div><div class="feature-title">Virtual Sneakers</div></div>
@@ -316,7 +333,7 @@
                 <p>12 brand tokens in one ecosystem</p>
             </div>
             <div class="brand-grid">
-                <div class="brand-card"><div class="brand-logo">NKE</div><div class="brand-name">Nike</div><div class="brand-price">$0.01</div></div>
+                <div class="brand-card"><div class="brand-logo">NIKE</div><div class="brand-name">Nike</div><div class="brand-price">$1.00</div></div>
                 <div class="brand-card"><div class="brand-logo">DKNY</div><div class="brand-name">Donna Kahn NY</div><div class="brand-price">$1.00</div></div>
                 <div class="brand-card"><div class="brand-logo">JVC</div><div class="brand-name">JVC</div><div class="brand-price">$0.01</div></div>
                 <div class="brand-card"><div class="brand-logo">ZARA</div><div class="brand-name">ZARA</div><div class="brand-price">$0.01</div></div>
@@ -346,7 +363,7 @@
                 <div class="swoosh-card">
                     <div class="icon">💰</div>
                     <h3>Earn</h3>
-                    <p>Get royalties from your designs. NKE token holders get early access to drops.</p>
+                    <p>Get royalties from your designs. NIKE token holders get early access to drops.</p>
                 </div>
                 <div class="swoosh-card">
                     <div class="icon">🎮</div>
@@ -365,7 +382,7 @@
         <div class="staking-overlay"></div>
         <div class="container">
             <div class="section-header">
-                <h2>Staking <span>NKE</span></h2>
+                <h2>Staking <span>NIKE</span></h2>
                 <p>Earn up to 30% APY in BYT tokens</p>
             </div>
             <div class="staking-grid">
@@ -380,7 +397,7 @@
                     <div class="pool-icon">👑</div>
                     <h3>Premium Pool</h3>
                     <div class="apy">30% <small>APY</small></div>
-                    <p class="pool-desc">Requires 500 NKE staked</p>
+                    <p class="pool-desc">Requires 500 NIKE staked</p>
                     <a href="#" class="pool-btn">Stake Now</a>
                 </div>
                 <div class="pool-card">
@@ -394,16 +411,50 @@
         </div>
     </section>
 
+    <!-- LIQUIDITY POOL -->
+    <section class="pools-section" id="pools">
+        <div class="container">
+            <div class="section-header">
+                <h2>Liquidity <span>Pool</span></h2>
+                <p>Real liquidity on Meteora V2</p>
+            </div>
+            <div class="staking-grid">
+                <div class="pool-card" style="background: rgba(255, 255, 255, 0.03);">
+                    <div class="pool-icon">💱</div>
+                    <h3>NIKE / USDT</h3>
+                    <div class="apy">$304.5M <small>liquidity</small></div>
+                    <p class="pool-desc">Meteora V2 • Age: 4 months</p>
+                    <a href="https://www.geckoterminal.com/solana/pools/BwdGxpLBghWXvqdVr83PdPJG94VAfGMWPyv7WzLb1xsN" target="_blank" class="pool-btn">Open Pool →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTRACT ADDRESS (НОВЫЙ БЛОК) -->
+    <section class="contract-section">
+        <div class="container">
+            <div class="contract-box">
+                <h3>📜 Contract Address</h3>
+                <code id="contractAddress">3Z629ngKkUVg6CthJumpPbQSi4dNPjjh5G88jiTrpJxY</code>
+                <button class="copy-btn" onclick="copyAddress()">📋 Copy Address</button>
+                <div class="links">
+                    <a href="https://opensea.io/token/solana/3Z629ngKkUVg6CthJumpPbQSi4dNPjjh5G88jiTrpJxY" target="_blank">View on OpenSea</a>
+                    <a href="https://www.geckoterminal.com/solana/pools/BwdGxpLBghWXvqdVr83PdPJG94VAfGMWPyv7WzLb1xsN" target="_blank">View on GeckoTerminal</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- BONUS (фото 5) -->
     <section class="bonus" id="bonus">
         <div class="container">
             <div class="bonus-grid">
                 <div class="bonus-image">
-                    <img src="photo-basketball-chair.jpg" alt="Nike Basketball" loading="lazy">
+                    <img src="photo-basketball-chair.jpg" alt="NIKE Basketball" loading="lazy">
                 </div>
                 <div class="bonus-text">
                     <h2>Built for <span>Athletes</span></h2>
-                    <p>NKE token is designed for the sports community. From virtual sneakers to real-world experiences, we're building the future of athletic culture on the blockchain.</p>
+                    <p>NIKE token is designed for the sports community. From virtual sneakers to real-world experiences, we're building the future of athletic culture on the blockchain.</p>
                 </div>
             </div>
         </div>
@@ -430,16 +481,16 @@
     <!-- TICKER -->
     <div class="ticker">
         <div class="ticker-content">
-            <span class="ticker-item">✦ NKE is <span>not a sneaker</span></span>
+            <span class="ticker-item">✦ NIKE is <span>not a sneaker</span></span>
             <span class="ticker-item">✦ Swoosh platform <span>coming soon</span></span>
             <span class="ticker-item">✦ Virtual sneakers <span>NFT</span></span>
-            <span class="ticker-item">✦ Co-create <span>with Nike</span></span>
+            <span class="ticker-item">✦ Co-create <span>with NIKE</span></span>
             <span class="ticker-item">✦ Earn royalties <span>up to 10%</span></span>
             <span class="ticker-item">✦ Staking APY up to <span>40%</span></span>
-            <span class="ticker-item">✦ NKE is <span>not a sneaker</span></span>
+            <span class="ticker-item">✦ NIKE is <span>not a sneaker</span></span>
             <span class="ticker-item">✦ Swoosh platform <span>coming soon</span></span>
             <span class="ticker-item">✦ Virtual sneakers <span>NFT</span></span>
-            <span class="ticker-item">✦ Co-create <span>with Nike</span></span>
+            <span class="ticker-item">✦ Co-create <span>with NIKE</span></span>
             <span class="ticker-item">✦ Earn royalties <span>up to 10%</span></span>
             <span class="ticker-item">✦ Staking APY up to <span>40%</span></span>
         </div>
@@ -449,24 +500,27 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">NKE<span>.</span></div>
+                <div class="footer-brand">NIKE<span>.</span></div>
                 <div class="footer-links">
                     <a href="about.html">About</a>
                     <a href="swoosh.html">Swoosh</a>
                     <a href="careers.html">Careers</a>
-                    <a href="https://t.me/nke_token" target="_blank">Telegram</a>
+                    <a href="https://t.me/nike_token" target="_blank">Telegram</a>
                     <a href="#" target="_blank">Twitter</a>
                 </div>
             </div>
             <div class="footer-disclaimer">
-                ⚠️ NKE is an independent SPL token. Not affiliated with Nike Inc.
-                All brand names are fictional abbreviations used within the BYT ecosystem.
+                ⚠️ <strong>NIKE</strong> is an independent SPL token (Networked Interoperable Key Exchange). 
+                Not affiliated with Nike Inc. The token is part of the BYT ecosystem and serves as 
+                a utility token for cross-chain interoperability. All brand names are fictional 
+                abbreviations used within the BYT ecosystem.
             </div>
         </div>
     </footer>
 
     <!-- SCRIPTS -->
     <script>
+        // Прозрачный хедер
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
             if (window.scrollY > 50) {
@@ -476,6 +530,7 @@
             }
         });
 
+        // Переключение языка
         document.getElementById('langSelect').addEventListener('change', function() {
             const lang = this.value;
             if (lang === 'en') {
@@ -485,11 +540,26 @@
             }
         });
 
+        // Подключение кошелька
         document.getElementById('connectWallet').addEventListener('click', function() {
             alert('🔗 Connect Solana Wallet (Phantom/Backpack)');
         });
+
+        // Копирование адреса контракта
+        function copyAddress() {
+            const address = document.getElementById('contractAddress').textContent;
+            navigator.clipboard.writeText(address).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const originalText = btn.textContent;
+                btn.textContent = '✅ Copied!';
+                setTimeout(() => { btn.textContent = originalText; }, 2000);
+            }).catch(() => {
+                alert('Press Ctrl+C to copy: ' + address);
+            });
+        }
     </script>
     
+    <!-- Подключаем общий счётчик -->
     <script src="counter.js"></script>
 </body>
 </html>
