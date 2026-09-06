@@ -9,13 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <style>
-        /* ===== ВСЕ ТЕ ЖЕ СТИЛИ ЧТО ВЫШЕ ===== */
+        /* ===== ВСЕ ТЕ ЖЕ СТИЛИ (без изменений) ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: #0A0A0A; color: #FFFFFF; line-height: 1.6; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
         .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
         
-        /* HEADER */
         .header {
             position: fixed;
             top: 0;
@@ -40,44 +39,10 @@
         .wallet-btn { background: transparent; border: 2px solid #FF3B30; color: #FF3B30; padding: 8px 20px; border-radius: 4px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
         .wallet-btn:hover { background: #FF3B30; color: #0A0A0A; }
         
-        /* HERO with VIDEO */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            z-index: 0;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            padding: 0 20px;
-        }
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
+        .hero-video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; z-index: 0; }
+        .hero::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 0 20px; }
         .hero-badge { display: inline-block; background: rgba(255, 59, 48, 0.2); padding: 6px 20px; border-radius: 4px; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #FF3B30; margin-bottom: 30px; font-weight: 600; }
         .hero-title { font-size: 120px; font-weight: 800; line-height: 1; margin-bottom: 20px; text-transform: uppercase; letter-spacing: -4px; }
         .hero-title span { color: #FF3B30; }
@@ -87,7 +52,6 @@
         .stat-value { font-size: 36px; font-weight: 800; color: #FF3B30; }
         .stat-label { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.6; margin-top: 4px; }
         
-        /* ABOUT */
         .about { padding: 120px 0; background: #0A0A0A; }
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
         .about-image img { width: 100%; height: 500px; object-fit: cover; border-radius: 4px; }
@@ -99,7 +63,6 @@
         .feature-icon { font-size: 32px; margin-bottom: 8px; }
         .feature-title { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
         
-        /* ECOSYSTEM */
         .ecosystem { padding: 120px 0; background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('photo-juggling-brown.jpg') center/cover no-repeat; background-attachment: fixed; }
         .section-header { text-align: center; margin-bottom: 60px; }
         .section-header h2 { font-size: 56px; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; }
@@ -112,29 +75,9 @@
         .brand-name { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; }
         .brand-price { font-size: 12px; color: #FF3B30; margin-top: 4px; }
         
-        /* SWOOSH with VIDEO 2 */
         .swoosh { padding: 120px 0; position: relative; overflow: hidden; }
-        .swoosh-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            z-index: 0;
-        }
-        .swoosh-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.75);
-            z-index: 1;
-        }
+        .swoosh-video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; z-index: 0; }
+        .swoosh-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); z-index: 1; }
         .swoosh .container { position: relative; z-index: 2; }
         .swoosh-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .swoosh-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); padding: 40px 30px; border-radius: 4px; text-align: center; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.1); }
@@ -143,29 +86,9 @@
         .swoosh-card h3 { font-size: 24px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
         .swoosh-card p { font-size: 16px; opacity: 0.7; }
         
-        /* STAKING with VIDEO 3 */
         .staking { padding: 120px 0; position: relative; overflow: hidden; }
-        .staking-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            z-index: 0;
-        }
-        .staking-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1;
-        }
+        .staking-video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; z-index: 0; }
+        .staking-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 1; }
         .staking .container { position: relative; z-index: 2; }
         .staking-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .pool-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); padding: 40px 30px; border-radius: 4px; text-align: center; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.1); }
@@ -179,7 +102,6 @@
         .pool-btn { display: inline-block; padding: 12px 32px; border: 2px solid #FF3B30; color: #FF3B30; border-radius: 4px; transition: all 0.3s ease; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; font-weight: 600; }
         .pool-btn:hover { background: #FF3B30; color: #0A0A0A; }
         
-        /* CONTRACT ADDRESS */
         .contract-section { padding: 60px 0; background: #0A0A0A; border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
         .contract-box { max-width: 900px; margin: 0 auto; text-align: center; padding: 30px; background: rgba(255, 255, 255, 0.03); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05); }
         .contract-box h3 { font-size: 18px; text-transform: uppercase; letter-spacing: 3px; opacity: 0.6; margin-bottom: 12px; }
@@ -190,7 +112,8 @@
         .contract-box .links a { font-size: 14px; color: #FF3B30; text-decoration: underline; opacity: 0.7; transition: opacity 0.3s; }
         .contract-box .links a:hover { opacity: 1; }
         
-        /* BONUS */
+        .pools-section { padding: 80px 0; background: #0A0A0A; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        
         .bonus { padding: 100px 0; background: #0A0A0A; }
         .bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
         .bonus-image img { width: 100%; height: 400px; object-fit: cover; border-radius: 4px; }
@@ -198,7 +121,6 @@
         .bonus-text h2 span { color: #FF3B30; }
         .bonus-text p { font-size: 18px; opacity: 0.7; margin-top: 16px; }
         
-        /* COUNTER */
         .counter-section { padding: 80px 0; background: #0A0A0A; border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
         .counter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 800px; margin: 0 auto; text-align: center; }
         .counter-item { padding: 30px; background: rgba(255, 255, 255, 0.03); border-radius: 4px; border: 1px solid rgba(255, 255, 255, 0.05); }
@@ -206,17 +128,12 @@
         .counter-label { font-size: 14px; text-transform: uppercase; letter-spacing: 3px; opacity: 0.6; margin-top: 8px; }
         .counter-timestamp { font-size: 11px; opacity: 0.3; margin-top: 16px; font-family: 'Courier New', monospace; }
         
-        /* TICKER */
         .ticker { background: #1A1A1A; padding: 12px 0; overflow: hidden; border-top: 1px solid rgba(255, 59, 48, 0.2); border-bottom: 1px solid rgba(255, 59, 48, 0.2); }
         .ticker-content { display: flex; animation: ticker-scroll 25s linear infinite; white-space: nowrap; }
         .ticker-item { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; padding: 0 40px; opacity: 0.7; font-weight: 300; }
         .ticker-item span { color: #FF3B30; font-weight: 700; }
         @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         
-        /* POOLS SECTION (NEW) */
-        .pools-section { padding: 80px 0; background: #0A0A0A; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        
-        /* FOOTER */
         .footer { padding: 60px 0 30px; background: #0A0A0A; }
         .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
         .footer-brand { font-size: 28px; font-weight: 800; text-transform: uppercase; letter-spacing: 4px; }
@@ -226,7 +143,6 @@
         .footer-links a:hover { opacity: 1; }
         .footer-disclaimer { width: 100%; font-size: 11px; opacity: 0.3; text-align: center; margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
         
-        /* RESPONSIVE */
         @media (max-width: 992px) {
             .hero-title { font-size: 72px; }
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -249,7 +165,6 @@
             .footer-content { flex-direction: column; text-align: center; }
             .counter-number { font-size: 48px; }
             .contract-box code { font-size: 14px; }
-            .contract-box .links { flex-direction: column; gap: 10px; }
         }
         @media (max-width: 480px) {
             .hero-title { font-size: 36px; letter-spacing: -1px; }
@@ -263,48 +178,60 @@
     <header class="header" id="header">
         <a href="index.html" class="logo">NIKE<span>.</span></a>
         <nav class="nav">
-            <a href="about.html">About</a>
-            <a href="swoosh.html">Swoosh</a>
-            <a href="careers.html">Careers</a>
-            <a href="#swoosh">Platform</a>
-            <a href="#staking">Staking</a>
+            <a href="about.html" data-i18n="nav_about">About</a>
+            <a href="swoosh.html" data-i18n="nav_swoosh">Swoosh</a>
+            <a href="careers.html" data-i18n="nav_careers">Careers</a>
+            <a href="#swoosh" data-i18n="nav_platform">Platform</a>
+            <a href="#staking" data-i18n="nav_staking">Staking</a>
         </nav>
         <div class="header-controls">
             <select class="lang-select" id="langSelect">
-                <option value="en">EN</option>
-                <option value="ru">RU</option>
-                <option value="zh">中文</option>
-                <option value="es">ES</option>
-                <option value="fr">FR</option>
-                <option value="de">DE</option>
-                <option value="it">IT</option>
-                <option value="pt">PT</option>
-                <option value="ja">日本語</option>
-                <option value="ar">العربية</option>
+                <option value="en">🇬🇧 EN</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="zh">🇨🇳 中文</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="de">🇩🇪 DE</option>
+                <option value="it">🇮🇹 IT</option>
+                <option value="pt">🇵🇹 PT</option>
+                <option value="ja">🇯🇵 日本語</option>
+                <option value="ar">🇸🇦 العربية</option>
             </select>
-            <button class="wallet-btn" id="connectWallet">Connect Wallet</button>
+            <button class="wallet-btn" id="connectWallet" data-i18n="wallet_btn">Connect Wallet</button>
         </div>
     </header>
 
-    <!-- HERO (видео 1) -->
+    <!-- HERO -->
     <section class="hero">
         <video class="hero-video" autoplay muted loop playsinline>
             <source src="video-crop-top-beige.mp4" type="video/mp4">
         </video>
         <div class="hero-content">
-            <div class="hero-badge">⚡ Just Token It</div>
+            <div class="hero-badge" data-i18n="hero_badge">⚡ Just Token It</div>
             <h1 class="hero-title">JUST <span>TOKEN</span> IT</h1>
-            <p class="hero-subtitle">NIKE Token — Gateway to Virtual Sneakers & Swoosh Platform</p>
+            <p class="hero-subtitle" data-i18n="hero_subtitle">NIKE Token — Gateway to Virtual Sneakers & Swoosh Platform</p>
             <div class="hero-stats">
-                <div class="stat"><div class="stat-value">$1.00</div><div class="stat-label">NIKE Price</div></div>
-                <div class="stat"><div class="stat-value">$10B</div><div class="stat-label">Market Cap</div></div>
-                <div class="stat"><div class="stat-value">8</div><div class="stat-label">Holders</div></div>
-                <div class="stat"><div class="stat-value">$304M</div><div class="stat-label">Liquidity</div></div>
+                <div class="stat">
+                    <div class="stat-value">$1.00</div>
+                    <div class="stat-label" data-i18n="stat_price">NIKE Price</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">$10B</div>
+                    <div class="stat-label" data-i18n="stat_mcap">Market Cap</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label" data-i18n="stat_holders">Holders</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">$304M</div>
+                    <div class="stat-label" data-i18n="stat_liquidity">Liquidity</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT (фото 1) -->
+    <!-- ABOUT -->
     <section class="about" id="about">
         <div class="container">
             <div class="about-grid">
@@ -312,25 +239,25 @@
                     <img src="photo-running-khaki.jpg" alt="NIKE Running" loading="lazy">
                 </div>
                 <div class="about-text">
-                    <h2>NIKE — <span>Not a Sneaker</span></h2>
-                    <p>The athletic token of the BYT ecosystem with virtual sneaker design, Swoosh platform, and digital community. Built for athletes, creators, and collectors who value innovation and movement.</p>
+                    <h2 data-i18n="about_title">NIKE — <span>Not a Sneaker</span></h2>
+                    <p data-i18n="about_desc">The athletic token of the BYT ecosystem with virtual sneaker design, Swoosh platform, and digital community. Built for athletes, creators, and collectors who value innovation and movement.</p>
                     <div class="about-features">
-                        <div class="feature"><div class="feature-icon">👟</div><div class="feature-title">Virtual Sneakers</div></div>
-                        <div class="feature"><div class="feature-icon">🎨</div><div class="feature-title">Co-creation</div></div>
-                        <div class="feature"><div class="feature-icon">🌐</div><div class="feature-title">Swoosh Platform</div></div>
-                        <div class="feature"><div class="feature-icon">🏆</div><div class="feature-title">Athlete Rewards</div></div>
+                        <div class="feature"><div class="feature-icon">👟</div><div class="feature-title" data-i18n="feature_sneakers">Virtual Sneakers</div></div>
+                        <div class="feature"><div class="feature-icon">🎨</div><div class="feature-title" data-i18n="feature_cocreation">Co-creation</div></div>
+                        <div class="feature"><div class="feature-icon">🌐</div><div class="feature-title" data-i18n="feature_swoosh">Swoosh Platform</div></div>
+                        <div class="feature"><div class="feature-icon">🏆</div><div class="feature-title" data-i18n="feature_rewards">Athlete Rewards</div></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ECOSYSTEM (фото 2 - фон) -->
+    <!-- ECOSYSTEM -->
     <section class="ecosystem" id="ecosystem">
         <div class="container">
             <div class="section-header">
-                <h2>BYT <span>Ecosystem</span></h2>
-                <p>12 brand tokens in one ecosystem</p>
+                <h2 data-i18n="ecosystem_title">BYT <span>Ecosystem</span></h2>
+                <p data-i18n="ecosystem_desc">12 brand tokens in one ecosystem</p>
             </div>
             <div class="brand-grid">
                 <div class="brand-card"><div class="brand-logo">NIKE</div><div class="brand-name">Nike</div><div class="brand-price">$1.00</div></div>
@@ -343,7 +270,7 @@
         </div>
     </section>
 
-    <!-- SWOOSH (видео 2) -->
+    <!-- SWOOSH -->
     <section class="swoosh" id="swoosh">
         <video class="swoosh-video" autoplay muted loop playsinline>
             <source src="video-gray-black.mp4" type="video/mp4">
@@ -351,30 +278,30 @@
         <div class="swoosh-overlay"></div>
         <div class="container">
             <div class="section-header">
-                <h2><span>Swoosh</span> Platform</h2>
-                <p>Create, collect, and earn from virtual sneakers</p>
+                <h2 data-i18n="swoosh_title"><span>Swoosh</span> Platform</h2>
+                <p data-i18n="swoosh_desc">Create, collect, and earn from virtual sneakers</p>
             </div>
             <div class="swoosh-grid">
                 <div class="swoosh-card">
                     <div class="icon">👟</div>
-                    <h3>Design</h3>
-                    <p>Create virtual sneakers using Swoosh tools. Customize colors, materials, and styles.</p>
+                    <h3 data-i18n="swoosh_card1_title">Design</h3>
+                    <p data-i18n="swoosh_card1_desc">Create virtual sneakers using Swoosh tools. Customize colors, materials, and styles.</p>
                 </div>
                 <div class="swoosh-card">
                     <div class="icon">💰</div>
-                    <h3>Earn</h3>
-                    <p>Get royalties from your designs. NIKE token holders get early access to drops.</p>
+                    <h3 data-i18n="swoosh_card2_title">Earn</h3>
+                    <p data-i18n="swoosh_card2_desc">Get royalties from your designs. NIKE token holders get early access to drops.</p>
                 </div>
                 <div class="swoosh-card">
                     <div class="icon">🎮</div>
-                    <h3>Play</h3>
-                    <p>Use your virtual sneakers in games and immersive experiences. Physical product redemption.</p>
+                    <h3 data-i18n="swoosh_card3_title">Play</h3>
+                    <p data-i18n="swoosh_card3_desc">Use your virtual sneakers in games and immersive experiences. Physical product redemption.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- STAKING (видео 3) -->
+    <!-- STAKING -->
     <section class="staking" id="staking">
         <video class="staking-video" autoplay muted loop playsinline>
             <source src="video-white-gray.mp4" type="video/mp4">
@@ -382,30 +309,30 @@
         <div class="staking-overlay"></div>
         <div class="container">
             <div class="section-header">
-                <h2>Staking <span>NIKE</span></h2>
-                <p>Earn up to 30% APY in BYT tokens</p>
+                <h2 data-i18n="staking_title">Staking <span>NIKE</span></h2>
+                <p data-i18n="staking_desc">Earn up to 30% APY in BYT tokens</p>
             </div>
             <div class="staking-grid">
                 <div class="pool-card">
                     <div class="pool-icon">💎</div>
-                    <h3>Basic Pool</h3>
-                    <div class="apy">15% <small>APY</small></div>
-                    <p class="pool-desc">Entry level for all holders</p>
-                    <a href="#" class="pool-btn">Stake Now</a>
+                    <h3 data-i18n="pool_basic_title">Basic Pool</h3>
+                    <div class="apy">15% <small data-i18n="apy_label">APY</small></div>
+                    <p class="pool-desc" data-i18n="pool_basic_desc">Entry level for all holders</p>
+                    <a href="#" class="pool-btn" data-i18n="pool_btn">Stake Now</a>
                 </div>
                 <div class="pool-card premium">
                     <div class="pool-icon">👑</div>
-                    <h3>Premium Pool</h3>
-                    <div class="apy">30% <small>APY</small></div>
-                    <p class="pool-desc">Requires 500 NIKE staked</p>
-                    <a href="#" class="pool-btn">Stake Now</a>
+                    <h3 data-i18n="pool_premium_title">Premium Pool</h3>
+                    <div class="apy">30% <small data-i18n="apy_label">APY</small></div>
+                    <p class="pool-desc" data-i18n="pool_premium_desc">Requires 500 NIKE staked</p>
+                    <a href="#" class="pool-btn" data-i18n="pool_btn">Stake Now</a>
                 </div>
                 <div class="pool-card">
                     <div class="pool-icon">🌟</div>
-                    <h3>Creator Pool</h3>
-                    <div class="apy">40% <small>APY</small></div>
-                    <p class="pool-desc">Exclusive for Swoosh designers</p>
-                    <a href="#" class="pool-btn">Stake Now</a>
+                    <h3 data-i18n="pool_creator_title">Creator Pool</h3>
+                    <div class="apy">40% <small data-i18n="apy_label">APY</small></div>
+                    <p class="pool-desc" data-i18n="pool_creator_desc">Exclusive for Swoosh designers</p>
+                    <a href="#" class="pool-btn" data-i18n="pool_btn">Stake Now</a>
                 </div>
             </div>
         </div>
@@ -415,37 +342,37 @@
     <section class="pools-section" id="pools">
         <div class="container">
             <div class="section-header">
-                <h2>Liquidity <span>Pool</span></h2>
-                <p>Real liquidity on Meteora V2</p>
+                <h2 data-i18n="liquidity_title">Liquidity <span>Pool</span></h2>
+                <p data-i18n="liquidity_desc">Real liquidity on Meteora V2</p>
             </div>
             <div class="staking-grid">
                 <div class="pool-card" style="background: rgba(255, 255, 255, 0.03);">
                     <div class="pool-icon">💱</div>
                     <h3>NIKE / USDT</h3>
-                    <div class="apy">$304.5M <small>liquidity</small></div>
-                    <p class="pool-desc">Meteora V2 • Age: 4 months</p>
-                    <a href="https://www.geckoterminal.com/solana/pools/BwdGxpLBghWXvqdVr83PdPJG94VAfGMWPyv7WzLb1xsN" target="_blank" class="pool-btn">Open Pool →</a>
+                    <div class="apy">$304.5M <small data-i18n="liquidity_label">liquidity</small></div>
+                    <p class="pool-desc" data-i18n="pool_meteora">Meteora V2 • Age: 4 months</p>
+                    <a href="https://www.geckoterminal.com/solana/pools/BwdGxpLBghWXvqdVr83PdPJG94VAfGMWPyv7WzLb1xsN" target="_blank" class="pool-btn" data-i18n="pool_open">Open Pool →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTRACT ADDRESS (НОВЫЙ БЛОК) -->
+    <!-- CONTRACT ADDRESS -->
     <section class="contract-section">
         <div class="container">
             <div class="contract-box">
-                <h3>📜 Contract Address</h3>
+                <h3 data-i18n="contract_title">📜 Contract Address</h3>
                 <code id="contractAddress">3Z629ngKkUVg6CthJumpPbQSi4dNPjjh5G88jiTrpJxY</code>
-                <button class="copy-btn" onclick="copyAddress()">📋 Copy Address</button>
+                <button class="copy-btn" onclick="copyAddress()" data-i18n="contract_copy">📋 Copy Address</button>
                 <div class="links">
-                    <a href="https://opensea.io/token/solana/3Z629ngKkUVg6CthJumpPbQSi4dNPjjh5G88jiTrpJxY" target="_blank">View on OpenSea</a>
-                    <a href="https://www.geckoterminal.com/solana/pools/BwdGxpLBghWXvqdVr83PdPJG94VAfGMWPyv7WzLb1xsN" target="_blank">View on GeckoTerminal</a>
+                    <a href="https://opensea.io/token/solana/3Z629ngKkUVg6CthJumpPbQSi4dNPjjh5G88jiTrpJxY" target="_blank" data-i18n="contract_opensea">View on OpenSea</a>
+                    <a href="https://www.geckoterminal.com/solana/pools/BwdGxpLBghWXvqdVr83PdPJG94VAfGMWPyv7WzLb1xsN" target="_blank" data-i18n="contract_gecko">View on GeckoTerminal</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- BONUS (фото 5) -->
+    <!-- BONUS -->
     <section class="bonus" id="bonus">
         <div class="container">
             <div class="bonus-grid">
@@ -453,8 +380,8 @@
                     <img src="photo-basketball-chair.jpg" alt="NIKE Basketball" loading="lazy">
                 </div>
                 <div class="bonus-text">
-                    <h2>Built for <span>Athletes</span></h2>
-                    <p>NIKE token is designed for the sports community. From virtual sneakers to real-world experiences, we're building the future of athletic culture on the blockchain.</p>
+                    <h2 data-i18n="bonus_title">Built for <span>Athletes</span></h2>
+                    <p data-i18n="bonus_desc">NIKE token is designed for the sports community. From virtual sneakers to real-world experiences, we're building the future of athletic culture on the blockchain.</p>
                 </div>
             </div>
         </div>
@@ -466,13 +393,13 @@
             <div class="counter-grid">
                 <div class="counter-item">
                     <div class="counter-number counter-visitors">119,800</div>
-                    <div class="counter-label">Unique Visitors</div>
-                    <div class="counter-timestamp counter-visitor-time">Since 2026</div>
+                    <div class="counter-label" data-i18n="counter_visitors">Unique Visitors</div>
+                    <div class="counter-timestamp counter-visitor-time" data-i18n="counter_since">Since 2026</div>
                 </div>
                 <div class="counter-item">
                     <div class="counter-number counter-clients">36</div>
-                    <div class="counter-label">Active Clients</div>
-                    <div class="counter-timestamp counter-client-time">Verified on-chain</div>
+                    <div class="counter-label" data-i18n="counter_clients">Active Clients</div>
+                    <div class="counter-timestamp counter-client-time" data-i18n="counter_verified">Verified on-chain</div>
                 </div>
             </div>
         </div>
@@ -480,7 +407,7 @@
 
     <!-- TICKER -->
     <div class="ticker">
-        <div class="ticker-content">
+        <div class="ticker-content" id="tickerContent">
             <span class="ticker-item">✦ NIKE is <span>not a sneaker</span></span>
             <span class="ticker-item">✦ Swoosh platform <span>coming soon</span></span>
             <span class="ticker-item">✦ Virtual sneakers <span>NFT</span></span>
@@ -502,14 +429,14 @@
             <div class="footer-content">
                 <div class="footer-brand">NIKE<span>.</span></div>
                 <div class="footer-links">
-                    <a href="about.html">About</a>
-                    <a href="swoosh.html">Swoosh</a>
-                    <a href="careers.html">Careers</a>
-                    <a href="https://t.me/nike_token" target="_blank">Telegram</a>
-                    <a href="#" target="_blank">Twitter</a>
+                    <a href="about.html" data-i18n="footer_about">About</a>
+                    <a href="swoosh.html" data-i18n="footer_swoosh">Swoosh</a>
+                    <a href="careers.html" data-i18n="footer_careers">Careers</a>
+                    <a href="https://t.me/nike_token" target="_blank" data-i18n="footer_telegram">Telegram</a>
+                    <a href="#" target="_blank" data-i18n="footer_twitter">Twitter</a>
                 </div>
             </div>
-            <div class="footer-disclaimer">
+            <div class="footer-disclaimer" data-i18n="footer_disclaimer">
                 ⚠️ <strong>NIKE</strong> is an independent SPL token (Networked Interoperable Key Exchange). 
                 Not affiliated with Nike Inc. The token is part of the BYT ecosystem and serves as 
                 a utility token for cross-chain interoperability. All brand names are fictional 
@@ -520,6 +447,767 @@
 
     <!-- SCRIPTS -->
     <script>
+        // ============================================================
+        // ===== ПЕРЕВОДЧИК (БЕЗ 404) =====
+        // ============================================================
+
+        // Словарь переводов
+        const translations = {
+            en: {
+                // Навигация
+                nav_about: 'About',
+                nav_swoosh: 'Swoosh',
+                nav_careers: 'Careers',
+                nav_platform: 'Platform',
+                nav_staking: 'Staking',
+                wallet_btn: 'Connect Wallet',
+                
+                // Hero
+                hero_badge: '⚡ Just Token It',
+                hero_subtitle: 'NIKE Token — Gateway to Virtual Sneakers & Swoosh Platform',
+                stat_price: 'NIKE Price',
+                stat_mcap: 'Market Cap',
+                stat_holders: 'Holders',
+                stat_liquidity: 'Liquidity',
+                
+                // About
+                about_title: 'NIKE — <span>Not a Sneaker</span>',
+                about_desc: 'The athletic token of the BYT ecosystem with virtual sneaker design, Swoosh platform, and digital community. Built for athletes, creators, and collectors who value innovation and movement.',
+                feature_sneakers: 'Virtual Sneakers',
+                feature_cocreation: 'Co-creation',
+                feature_swoosh: 'Swoosh Platform',
+                feature_rewards: 'Athlete Rewards',
+                
+                // Ecosystem
+                ecosystem_title: 'BYT <span>Ecosystem</span>',
+                ecosystem_desc: '12 brand tokens in one ecosystem',
+                
+                // Swoosh
+                swoosh_title: '<span>Swoosh</span> Platform',
+                swoosh_desc: 'Create, collect, and earn from virtual sneakers',
+                swoosh_card1_title: 'Design',
+                swoosh_card1_desc: 'Create virtual sneakers using Swoosh tools. Customize colors, materials, and styles.',
+                swoosh_card2_title: 'Earn',
+                swoosh_card2_desc: 'Get royalties from your designs. NIKE token holders get early access to drops.',
+                swoosh_card3_title: 'Play',
+                swoosh_card3_desc: 'Use your virtual sneakers in games and immersive experiences. Physical product redemption.',
+                
+                // Staking
+                staking_title: 'Staking <span>NIKE</span>',
+                staking_desc: 'Earn up to 30% APY in BYT tokens',
+                pool_basic_title: 'Basic Pool',
+                pool_premium_title: 'Premium Pool',
+                pool_creator_title: 'Creator Pool',
+                pool_basic_desc: 'Entry level for all holders',
+                pool_premium_desc: 'Requires 500 NIKE staked',
+                pool_creator_desc: 'Exclusive for Swoosh designers',
+                pool_btn: 'Stake Now',
+                apy_label: 'APY',
+                
+                // Liquidity
+                liquidity_title: 'Liquidity <span>Pool</span>',
+                liquidity_desc: 'Real liquidity on Meteora V2',
+                liquidity_label: 'liquidity',
+                pool_meteora: 'Meteora V2 • Age: 4 months',
+                pool_open: 'Open Pool →',
+                
+                // Contract
+                contract_title: '📜 Contract Address',
+                contract_copy: '📋 Copy Address',
+                contract_opensea: 'View on OpenSea',
+                contract_gecko: 'View on GeckoTerminal',
+                
+                // Bonus
+                bonus_title: 'Built for <span>Athletes</span>',
+                bonus_desc: 'NIKE token is designed for the sports community. From virtual sneakers to real-world experiences, we\'re building the future of athletic culture on the blockchain.',
+                
+                // Counter
+                counter_visitors: 'Unique Visitors',
+                counter_clients: 'Active Clients',
+                counter_since: 'Since 2026',
+                counter_verified: 'Verified on-chain',
+                
+                // Footer
+                footer_about: 'About',
+                footer_swoosh: 'Swoosh',
+                footer_careers: 'Careers',
+                footer_telegram: 'Telegram',
+                footer_twitter: 'Twitter',
+                footer_disclaimer: '⚠️ <strong>NIKE</strong> is an independent SPL token (Networked Interoperable Key Exchange). Not affiliated with Nike Inc. The token is part of the BYT ecosystem and serves as a utility token for cross-chain interoperability. All brand names are fictional abbreviations used within the BYT ecosystem.'
+            },
+            ru: {
+                nav_about: 'О нас',
+                nav_swoosh: 'Swoosh',
+                nav_careers: 'Карьера',
+                nav_platform: 'Платформа',
+                nav_staking: 'Стейкинг',
+                wallet_btn: 'Подключить кошелек',
+                
+                hero_badge: '⚡ Просто Токенизируй',
+                hero_subtitle: 'NIKE Токен — Вход в мир виртуальных кроссовок и платформы Swoosh',
+                stat_price: 'Цена NIKE',
+                stat_mcap: 'Рыночная капа',
+                stat_holders: 'Холдеры',
+                stat_liquidity: 'Ликвидность',
+                
+                about_title: 'NIKE — <span>Не кроссовок</span>',
+                about_desc: 'Спортивный токен экосистемы BYT с дизайном виртуальных кроссовок, платформой Swoosh и цифровым сообществом. Создан для атлетов, создателей и коллекционеров, ценящих инновации и движение.',
+                feature_sneakers: 'Виртуальные кроссовки',
+                feature_cocreation: 'Совместное творчество',
+                feature_swoosh: 'Платформа Swoosh',
+                feature_rewards: 'Награды атлетам',
+                
+                ecosystem_title: 'Экосистема <span>BYT</span>',
+                ecosystem_desc: '12 брендовых токенов в одной экосистеме',
+                
+                swoosh_title: '<span>Swoosh</span> Платформа',
+                swoosh_desc: 'Создавай, коллекционируй и зарабатывай на виртуальных кроссовках',
+                swoosh_card1_title: 'Дизайн',
+                swoosh_card1_desc: 'Создавай виртуальные кроссовки с помощью инструментов Swoosh. Настраивай цвета, материалы и стили.',
+                swoosh_card2_title: 'Заработок',
+                swoosh_card2_desc: 'Получай роялти за свои дизайны. Держатели NIKE получают ранний доступ к дропам.',
+                swoosh_card3_title: 'Играй',
+                swoosh_card3_desc: 'Используй свои виртуальные кроссовки в играх и метавселенных. Выкуп физических продуктов.',
+                
+                staking_title: 'Стейкинг <span>NIKE</span>',
+                staking_desc: 'Зарабатывай до 30% годовых в токенах BYT',
+                pool_basic_title: 'Базовый пул',
+                pool_premium_title: 'Премиум пул',
+                pool_creator_title: 'Креаторский пул',
+                pool_basic_desc: 'Входной уровень для всех холдеров',
+                pool_premium_desc: 'Требуется 500 NIKE в стейкинге',
+                pool_creator_desc: 'Эксклюзивно для дизайнеров Swoosh',
+                pool_btn: 'Застейкать',
+                apy_label: 'APY',
+                
+                liquidity_title: 'Пул <span>Ликвидности</span>',
+                liquidity_desc: 'Реальная ликвидность на Meteora V2',
+                liquidity_label: 'ликвидность',
+                pool_meteora: 'Meteora V2 • Возраст: 4 месяца',
+                pool_open: 'Открыть пул →',
+                
+                contract_title: '📜 Адрес контракта',
+                contract_copy: '📋 Копировать адрес',
+                contract_opensea: 'Посмотреть на OpenSea',
+                contract_gecko: 'Посмотреть на GeckoTerminal',
+                
+                bonus_title: 'Создано для <span>Атлетов</span>',
+                bonus_desc: 'Токен NIKE создан для спортивного сообщества. От виртуальных кроссовок до реальных впечатлений — мы строим будущее спортивной культуры на блокчейне.',
+                
+                counter_visitors: 'Уникальные посетители',
+                counter_clients: 'Активные клиенты',
+                counter_since: 'С 2026',
+                counter_verified: 'Верифицировано в блокчейне',
+                
+                footer_about: 'О нас',
+                footer_swoosh: 'Swoosh',
+                footer_careers: 'Карьера',
+                footer_telegram: 'Telegram',
+                footer_twitter: 'Twitter',
+                footer_disclaimer: '⚠️ <strong>NIKE</strong> — независимый SPL-токен (Networked Interoperable Key Exchange). Не аффилирован с Nike Inc. Токен является частью экосистемы BYT и служит утилитарным токеном для межсетевой совместимости. Все названия брендов являются вымышленными аббревиатурами, используемыми в экосистеме BYT.'
+            },
+            zh: {
+                nav_about: '关于',
+                nav_swoosh: 'Swoosh',
+                nav_careers: '职业',
+                nav_platform: '平台',
+                nav_staking: '质押',
+                wallet_btn: '连接钱包',
+                
+                hero_badge: '⚡ 只管代币化',
+                hero_subtitle: 'NIKE 代币 — 通往虚拟运动鞋和 Swoosh 平台的门户',
+                stat_price: 'NIKE 价格',
+                stat_mcap: '市值',
+                stat_holders: '持有者',
+                stat_liquidity: '流动性',
+                
+                about_title: 'NIKE — <span>不是运动鞋</span>',
+                about_desc: 'BYT 生态系统的运动代币，具有虚拟运动鞋设计、Swoosh 平台和数字社区。为重视创新和运动的运动员、创作者和收藏家而建。',
+                feature_sneakers: '虚拟运动鞋',
+                feature_cocreation: '共同创作',
+                feature_swoosh: 'Swoosh 平台',
+                feature_rewards: '运动员奖励',
+                
+                ecosystem_title: 'BYT <span>生态系统</span>',
+                ecosystem_desc: '一个生态系统中的 12 个品牌代币',
+                
+                swoosh_title: '<span>Swoosh</span> 平台',
+                swoosh_desc: '创建、收集和从虚拟运动鞋中获利',
+                swoosh_card1_title: '设计',
+                swoosh_card1_desc: '使用 Swoosh 工具创建虚拟运动鞋。自定义颜色、材料和样式。',
+                swoosh_card2_title: '赚取',
+                swoosh_card2_desc: '从您的设计中获得版税。NIKE 代币持有者可以提前获得产品发布机会。',
+                swoosh_card3_title: '游戏',
+                swoosh_card3_desc: '在游戏和沉浸式体验中使用您的虚拟运动鞋。物理产品兑换。',
+                
+                staking_title: '质押 <span>NIKE</span>',
+                staking_desc: '赚取高达 30% 的 BYT 代币年化收益',
+                pool_basic_title: '基础池',
+                pool_premium_title: '高级池',
+                pool_creator_title: '创作者池',
+                pool_basic_desc: '所有持有者的入门级别',
+                pool_premium_desc: '需要质押 500 NIKE',
+                pool_creator_desc: 'Swoosh 设计师专属',
+                pool_btn: '立即质押',
+                apy_label: '年化收益',
+                
+                liquidity_title: '流动性 <span>池</span>',
+                liquidity_desc: 'Meteora V2 上的真实流动性',
+                liquidity_label: '流动性',
+                pool_meteora: 'Meteora V2 • 年龄: 4 个月',
+                pool_open: '打开池 →',
+                
+                contract_title: '📜 合约地址',
+                contract_copy: '📋 复制地址',
+                contract_opensea: '在 OpenSea 上查看',
+                contract_gecko: '在 GeckoTerminal 上查看',
+                
+                bonus_title: '为 <span>运动员</span> 打造',
+                bonus_desc: 'NIKE 代币是为体育社区设计的。从虚拟运动鞋到现实体验，我们正在区块链上打造体育文化的未来。',
+                
+                counter_visitors: '独立访客',
+                counter_clients: '活跃客户',
+                counter_since: '自 2026 年起',
+                counter_verified: '链上验证',
+                
+                footer_about: '关于',
+                footer_swoosh: 'Swoosh',
+                footer_careers: '职业',
+                footer_telegram: 'Telegram',
+                footer_twitter: 'Twitter',
+                footer_disclaimer: '⚠️ <strong>NIKE</strong> 是一个独立的 SPL 代币（网络互操作密钥交换）。与 Nike Inc. 无关。该代币是 BYT 生态系统的一部分，用作跨链互操作的实用代币。所有品牌名称均为 BYT 生态系统中使用的虚构缩写。'
+            },
+            es: {
+                nav_about: 'Acerca de',
+                nav_swoosh: 'Swoosh',
+                nav_careers: 'Carreras',
+                nav_platform: 'Plataforma',
+                nav_staking: 'Staking',
+                wallet_btn: 'Conectar Wallet',
+                
+                hero_badge: '⚡ Solo Tokenízalo',
+                hero_subtitle: 'Token NIKE — Puerta de entrada a zapatillas virtuales y plataforma Swoosh',
+                stat_price: 'Precio NIKE',
+                stat_mcap: 'Capitalización',
+                stat_holders: 'Tenedores',
+                stat_liquidity: 'Liquidez',
+                
+                about_title: 'NIKE — <span>No es una zapatilla</span>',
+                about_desc: 'El token deportivo del ecosistema BYT con diseño de zapatillas virtuales, plataforma Swoosh y comunidad digital. Creado para atletas, creadores y coleccionistas que valoran la innovación y el movimiento.',
+                feature_sneakers: 'Zapatillas virtuales',
+                feature_cocreation: 'Co-creación',
+                feature_swoosh: 'Plataforma Swoosh',
+                feature_rewards: 'Recompensas para atletas',
+                
+                ecosystem_title: 'Ecosistema <span>BYT</span>',
+                ecosystem_desc: '12 tokens de marca en un ecosistema',
+                
+                swoosh_title: 'Plataforma <span>Swoosh</span>',
+                swoosh_desc: 'Crea, colecciona y gana con zapatillas virtuales',
+                swoosh_card1_title: 'Diseño',
+                swoosh_card1_desc: 'Crea zapatillas virtuales con herramientas Swoosh. Personaliza colores, materiales y estilos.',
+                swoosh_card2_title: 'Gana',
+                swoosh_card2_desc: 'Obtén regalías por tus diseños. Los tenedores de NIKE tienen acceso anticipado a lanzamientos.',
+                swoosh_card3_title: 'Juega',
+                swoosh_card3_desc: 'Usa tus zapatillas virtuales en juegos y experiencias inmersivas. Canje de productos físicos.',
+                
+                staking_title: 'Staking <span>NIKE</span>',
+                staking_desc: 'Gana hasta 30% APY en tokens BYT',
+                pool_basic_title: 'Pool Básico',
+                pool_premium_title: 'Pool Premium',
+                pool_creator_title: 'Pool Creador',
+                pool_basic_desc: 'Nivel de entrada para todos los tenedores',
+                pool_premium_desc: 'Requiere 500 NIKE en staking',
+                pool_creator_desc: 'Exclusivo para diseñadores Swoosh',
+                pool_btn: 'Hacer Staking',
+                apy_label: 'APY',
+                
+                liquidity_title: 'Pool de <span>Liquidez</span>',
+                liquidity_desc: 'Liquidez real en Meteora V2',
+                liquidity_label: 'liquidez',
+                pool_meteora: 'Meteora V2 • Edad: 4 meses',
+                pool_open: 'Abrir Pool →',
+                
+                contract_title: '📜 Dirección del contrato',
+                contract_copy: '📋 Copiar dirección',
+                contract_opensea: 'Ver en OpenSea',
+                contract_gecko: 'Ver en GeckoTerminal',
+                
+                bonus_title: 'Hecho para <span>Atletas</span>',
+                bonus_desc: 'El token NIKE está diseñado para la comunidad deportiva. Desde zapatillas virtuales hasta experiencias del mundo real, estamos construyendo el futuro de la cultura deportiva en blockchain.',
+                
+                counter_visitors: 'Visitantes únicos',
+                counter_clients: 'Clientes activos',
+                counter_since: 'Desde 2026',
+                counter_verified: 'Verificado en-chain',
+                
+                footer_about: 'Acerca de',
+                footer_swoosh: 'Swoosh',
+                footer_careers: 'Carreras',
+                footer_telegram: 'Telegram',
+                footer_twitter: 'Twitter',
+                footer_disclaimer: '⚠️ <strong>NIKE</strong> es un token SPL independiente (Intercambio de Claves Interoperable en Red). No afiliado a Nike Inc. El token es parte del ecosistema BYT y sirve como token de utilidad para la interoperabilidad entre cadenas. Todos los nombres de marca son abreviaturas ficticias utilizadas en el ecosistema BYT.'
+            },
+            fr: {
+                nav_about: 'À propos',
+                nav_swoosh: 'Swoosh',
+                nav_careers: 'Carrières',
+                nav_platform: 'Plateforme',
+                nav_staking: 'Staking',
+                wallet_btn: 'Connecter le portefeuille',
+                
+                hero_badge: '⚡ Tokenisez-le',
+                hero_subtitle: 'Token NIKE — Passerelle vers les sneakers virtuelles et la plateforme Swoosh',
+                stat_price: 'Prix NIKE',
+                stat_mcap: 'Capitalisation',
+                stat_holders: 'Détenteurs',
+                stat_liquidity: 'Liquidité',
+                
+                about_title: 'NIKE — <span>Pas une sneaker</span>',
+                about_desc: 'Le token sportif de l\'écosystème BYT avec conception de sneakers virtuelles, plateforme Swoosh et communauté numérique. Conçu pour les athlètes, créateurs et collectionneurs qui valorisent l\'innovation et le mouvement.',
+                feature_sneakers: 'Sneakers virtuelles',
+                feature_cocreation: 'Co-création',
+                feature_swoosh: 'Plateforme Swoosh',
+                feature_rewards: 'Récompenses athlètes',
+                
+                ecosystem_title: 'Écosystème <span>BYT</span>',
+                ecosystem_desc: '12 tokens de marque dans un écosystème',
+                
+                swoosh_title: 'Plateforme <span>Swoosh</span>',
+                swoosh_desc: 'Créez, collectionnez et gagnez avec des sneakers virtuelles',
+                swoosh_card1_title: 'Design',
+                swoosh_card1_desc: 'Créez des sneakers virtuelles avec les outils Swoosh. Personnalisez couleurs, matériaux et styles.',
+                swoosh_card2_title: 'Gagnez',
+                swoosh_card2_desc: 'Recevez des redevances pour vos designs. Les détenteurs de NIKE ont un accès anticipé aux drops.',
+                swoosh_card3_title: 'Jouez',
+                swoosh_card3_desc: 'Utilisez vos sneakers virtuelles dans des jeux et expériences immersives. Échange de produits physiques.',
+                
+                staking_title: 'Staking <span>NIKE</span>',
+                staking_desc: 'Gagnez jusqu\'à 30% APY en tokens BYT',
+                pool_basic_title: 'Pool de base',
+                pool_premium_title: 'Pool Premium',
+                pool_creator_title: 'Pool Créateur',
+                pool_basic_desc: 'Niveau d\'entrée pour tous les détenteurs',
+                pool_premium_desc: 'Nécessite 500 NIKE en staking',
+                pool_creator_desc: 'Exclusif pour les designers Swoosh',
+                pool_btn: 'Staker maintenant',
+                apy_label: 'APY',
+                
+                liquidity_title: 'Pool de <span>Liquidité</span>',
+                liquidity_desc: 'Liquidité réelle sur Meteora V2',
+                liquidity_label: 'liquidité',
+                pool_meteora: 'Meteora V2 • Âge: 4 mois',
+                pool_open: 'Ouvrir le pool →',
+                
+                contract_title: '📜 Adresse du contrat',
+                contract_copy: '📋 Copier l\'adresse',
+                contract_opensea: 'Voir sur OpenSea',
+                contract_gecko: 'Voir sur GeckoTerminal',
+                
+                bonus_title: 'Conçu pour les <span>Athlètes</span>',
+                bonus_desc: 'Le token NIKE est conçu pour la communauté sportive. Des sneakers virtuelles aux expériences du monde réel, nous construisons l\'avenir de la culture sportive sur la blockchain.',
+                
+                counter_visitors: 'Visiteurs uniques',
+                counter_clients: 'Clients actifs',
+                counter_since: 'Depuis 2026',
+                counter_verified: 'Vérifié on-chain',
+                
+                footer_about: 'À propos',
+                footer_swoosh: 'Swoosh',
+                footer_careers: 'Carrières',
+                footer_telegram: 'Telegram',
+                footer_twitter: 'Twitter',
+                footer_disclaimer: '⚠️ <strong>NIKE</strong> est un token SPL indépendant (Networked Interoperable Key Exchange). Non affilié à Nike Inc. Le token fait partie de l\'écosystème BYT et sert de token utilitaire pour l\'interopérabilité entre chaînes. Tous les noms de marque sont des abréviations fictives utilisées dans l\'écosystème BYT.'
+            },
+            de: {
+                nav_about: 'Über uns',
+                nav_swoosh: 'Swoosh',
+                nav_careers: 'Karriere',
+                nav_platform: 'Plattform',
+                nav_staking: 'Staking',
+                wallet_btn: 'Wallet verbinden',
+                
+                hero_badge: '⚡ Tokenize it',
+                hero_subtitle: 'NIKE Token — Gateway zu virtuellen Sneakers und Swoosh-Plattform',
+                stat_price: 'NIKE Preis',
+                stat_mcap: 'Marktkapitalisierung',
+                stat_holders: 'Inhaber',
+                stat_liquidity: 'Liquidität',
+                
+                about_title: 'NIKE — <span>Kein Sneaker</span>',
+                about_desc: 'Der Sport-Token des BYT-Ökosystems mit virtuellem Sneaker-Design, Swoosh-Plattform und digitaler Community. Entwickelt für Athleten, Kreative und Sammler, die Innovation und Bewegung schätzen.',
+                feature_sneakers: 'Virtuelle Sneakers',
+                feature_cocreation: 'Co-Creation',
+                feature_swoosh: 'Swoosh-Plattform',
+                feature_rewards: 'Athleten-Belohnungen',
+                
+                ecosystem_title: 'BYT <span>Ökosystem</span>',
+                ecosystem_desc: '12 Marken-Token in einem Ökosystem',
+                
+                swoosh_title: '<span>Swoosh</span> Plattform',
+                swoosh_desc: 'Erstelle, sammle und verdiene mit virtuellen Sneakers',
+                swoosh_card1_title: 'Design',
+                swoosh_card1_desc: 'Erstelle virtuelle Sneakers mit Swoosh-Tools. Passe Farben, Materialien und Stile an.',
+                swoosh_card2_title: 'Verdienen',
+                swoosh_card2_desc: 'Erhalte Lizenzgebühren für deine Designs. NIKE-Token-Inhaber erhalten frühzeitigen Zugang zu Drops.',
+                swoosh_card3_title: 'Spielen',
+                swoosh_card3_desc: 'Verwende deine virtuellen Sneakers in Spielen und immersiven Erlebnissen. Einlösung physischer Produkte.',
+                
+                staking_title: 'Staking <span>NIKE</span>',
+                staking_desc: 'Verdiene bis zu 30% APY in BYT-Token',
+                pool_basic_title: 'Basic Pool',
+                pool_premium_title: 'Premium Pool',
+                pool_creator_title: 'Creator Pool',
+                pool_basic_desc: 'Einstiegslevel für alle Inhaber',
+                pool_premium_desc: 'Erfordert 500 NIKE im Staking',
+                pool_creator_desc: 'Exklusiv für Swoosh-Designer',
+                pool_btn: 'Staken',
+                apy_label: 'APY',
+                
+                liquidity_title: 'Liquiditäts-<span>Pool</span>',
+                liquidity_desc: 'Echte Liquidität auf Meteora V2',
+                liquidity_label: 'Liquidität',
+                pool_meteora: 'Meteora V2 • Alter: 4 Monate',
+                pool_open: 'Pool öffnen →',
+                
+                contract_title: '📜 Vertragsadresse',
+                contract_copy: '📋 Adresse kopieren',
+                contract_opensea: 'Auf OpenSea ansehen',
+                contract_gecko: 'Auf GeckoTerminal ansehen',
+                
+                bonus_title: 'Für <span>Athleten</span> gemacht',
+                bonus_desc: 'Der NIKE-Token wurde für die Sport-Community entwickelt. Von virtuellen Sneakers bis hin zu realen Erlebnissen bauen wir die Zukunft der Sportkultur auf der Blockchain auf.',
+                
+                counter_visitors: 'Eindeutige Besucher',
+                counter_clients: 'Aktive Kunden',
+                counter_since: 'Seit 2026',
+                counter_verified: 'On-Chain verifiziert',
+                
+                footer_about: 'Über uns',
+                footer_swoosh: 'Swoosh',
+                footer_careers: 'Karriere',
+                footer_telegram: 'Telegram',
+                footer_twitter: 'Twitter',
+                footer_disclaimer: '⚠️ <strong>NIKE</strong> ist ein unabhängiger SPL-Token (Networked Interoperable Key Exchange). Nicht verbunden mit Nike Inc. Der Token ist Teil des BYT-Ökosystems und dient als Utility-Token für kettenübergreifende Interoperabilität. Alle Markennamen sind fiktive Abkürzungen, die im BYT-Ökosystem verwendet werden.'
+            },
+            it: {
+                nav_about: 'Chi siamo',
+                nav_swoosh: 'Swoosh',
+                nav_careers: 'Carriere',
+                nav_platform: 'Piattaforma',
+                nav_staking: 'Staking',
+                wallet_btn: 'Connetti Wallet',
+                
+                hero_badge: '⚡ Tokenizzalo',
+                hero_subtitle: 'Token NIKE — Porta d\'accesso a sneaker virtuali e piattaforma Swoosh',
+                stat_price: 'Prezzo NIKE',
+                stat_mcap: 'Capitalizzazione',
+                stat_holders: 'Detentori',
+                stat_liquidity: 'Liquidità',
+                
+                about_title: 'NIKE — <span>Non una sneaker</span>',
+                about_desc: 'Il token sportivo dell\'ecosistema BYT con design di sneaker virtuali, piattaforma Swoosh e comunità digitale. Creato per atleti, creatori e collezionisti che apprezzano innovazione e movimento.',
+                feature_sneakers: 'Sneaker virtuali',
+                feature_cocreation: 'Co-creazione',
+                feature_swoosh: 'Piattaforma Swoosh',
+                feature_rewards: 'Ricompense atleti',
+                
+                ecosystem_title: 'Ecosistema <span>BYT</span>',
+                ecosystem_desc: '12 token di marca in un ecosistema',
+                
+                swoosh_title: 'Piattaforma <span>Swoosh</span>',
+                swoosh_desc: 'Crea, colleziona e guadagna con sneaker virtuali',
+                swoosh_card1_title: 'Design',
+                swoosh_card1_desc: 'Crea sneaker virtuali con gli strumenti Swoosh. Personalizza colori, materiali e stili.',
+                swoosh_card2_title: 'Guadagna',
+                swoosh_card2_desc: 'Ricevi royalty per i tuoi design. I detentori di NIKE hanno accesso anticipato ai drop.',
+                swoosh_card3_title: 'Gioca',
+                swoosh_card3_desc: 'Usa le tue sneaker virtuali in giochi ed esperienze immersive. Riscatto di prodotti fisici.',
+                
+                staking_title: 'Staking <span>NIKE</span>',
+                staking_desc: 'Guadagna fino al 30% APY in token BYT',
+                pool_basic_title: 'Pool Base',
+                pool_premium_title: 'Pool Premium',
+                pool_creator_title: 'Pool Creator',
+                pool_basic_desc: 'Livello base per tutti i detentori',
+                pool_premium_desc: 'Richiede 500 NIKE in staking',
+                pool_creator_desc: 'Esclusivo per designer Swoosh',
+                pool_btn: 'Stake Ora',
+                apy_label: 'APY',
+                
+                liquidity_title: 'Pool di <span>Liquidità</span>',
+                liquidity_desc: 'Liquidità reale su Meteora V2',
+                liquidity_label: 'liquidità',
+                pool_meteora: 'Meteora V2 • Età: 4 mesi',
+                pool_open: 'Apri Pool →',
+                
+                contract_title: '📜 Indirizzo del contratto',
+                contract_copy: '📋 Copia indirizzo',
+                contract_opensea: 'Vedi su OpenSea',
+                contract_gecko: 'Vedi su GeckoTerminal',
+                
+                bonus_title: 'Progettato per <span>Atleti</span>',
+                bonus_desc: 'Il token NIKE è progettato per la comunità sportiva. Dalle sneaker virtuali alle esperienze nel mondo reale, stiamo costruendo il futuro della cultura sportiva sulla blockchain.',
+                
+                counter_visitors: 'Visitatori unici',
+                counter_clients: 'Clienti attivi',
+                counter_since: 'Dal 2026',
+                counter_verified: 'Verificato on-chain',
+                
+                footer_about: 'Chi siamo',
+                footer_swoosh: 'Swoosh',
+                footer_careers: 'Carriere',
+                footer_telegram: 'Telegram',
+                footer_twitter: 'Twitter',
+                footer_disclaimer: '⚠️ <strong>NIKE</strong> è un token SPL indipendente (Networked Interoperable Key Exchange). Non affiliato a Nike Inc. Il token fa parte dell\'ecosistema BYT e funge da token di utilità per l\'interoperabilità cross-chain. Tutti i nomi dei marchi sono abbreviazioni fittizie utilizzate nell\'ecosistema BYT.'
+            },
+            pt: {
+                nav_about: 'Sobre',
+                nav_swoosh: 'Swoosh',
+                nav_careers: 'Carreiras',
+                nav_platform: 'Plataforma',
+                nav_staking: 'Staking',
+                wallet_btn: 'Conectar Carteira',
+                
+                hero_badge: '⚡ Tokenize It',
+                hero_subtitle: 'Token NIKE — Porta de entrada para tênis virtuais e plataforma Swoosh',
+                stat_price: 'Preço NIKE',
+                stat_mcap: 'Capitalização',
+                stat_holders: 'Detentores',
+                stat_liquidity: 'Liquidez',
+                
+                about_title: 'NIKE — <span>Não é um tênis</span>',
+                about_desc: 'O token esportivo do ecossistema BYT com design de tênis virtuais, plataforma Swoosh e comunidade digital. Criado para atletas, criadores e colecionadores que valorizam inovação e movimento.',
+                feature_sneakers: 'Tênis virtuais',
+                feature_cocreation: 'Cocriação',
+                feature_swoosh: 'Plataforma Swoosh',
+                feature_rewards: 'Recompensas para atletas',
+                
+                ecosystem_title: 'Ecossistema <span>BYT</span>',
+                ecosystem_desc: '12 tokens de marca em um ecossistema',
+                
+                swoosh_title: 'Plataforma <span>Swoosh</span>',
+                swoosh_desc: 'Crie, coleccione e ganhe com tênis virtuais',
+                swoosh_card1_title: 'Design',
+                swoosh_card1_desc: 'Crie tênis virtuais com ferramentas Swoosh. Personalize cores, materiais e estilos.',
+                swoosh_card2_title: 'Ganhe',
+                swoosh_card2_desc: 'Receba royalties por seus designs. Detentores de NIKE têm acesso antecipado a drops.',
+                swoosh_card3_title: 'Jogue',
+                swoosh_card3_desc: 'Use seus tênis virtuais em jogos e experiências imersivas. Resgate de produtos físicos.',
+                
+                staking_title: 'Staking <span>NIKE</span>',
+                staking_desc: 'Ganhe até 30% APY em tokens BYT',
+                pool_basic_title: 'Pool Básico',
+                pool_premium_title: 'Pool Premium',
+                pool_creator_title: 'Pool Criador',
+                pool_basic_desc: 'Nível de entrada para todos os detentores',
+                pool_premium_desc: 'Requer 500 NIKE em staking',
+                pool_creator_desc: 'Exclusivo para designers Swoosh',
+                pool_btn: 'Fazer Staking',
+                apy_label: 'APY',
+                
+                liquidity_title: 'Pool de <span>Liquidez</span>',
+                liquidity_desc: 'Liquidez real no Meteora V2',
+                liquidity_label: 'liquidez',
+                pool_meteora: 'Meteora V2 • Idade: 4 meses',
+                pool_open: 'Abrir Pool →',
+                
+                contract_title: '📜 Endereço do contrato',
+                contract_copy: '📋 Copiar endereço',
+                contract_opensea: 'Ver no OpenSea',
+                contract_gecko: 'Ver no GeckoTerminal',
+                
+                bonus_title: 'Feito para <span>Atletas</span>',
+                bonus_desc: 'O token NIKE é projetado para a comunidade esportiva. De tênis virtuais a experiências do mundo real, estamos construindo o futuro da cultura esportiva no blockchain.',
+                
+                counter_visitors: 'Visitantes únicos',
+                counter_clients: 'Clientes ativos',
+                counter_since: 'Desde 2026',
+                counter_verified: 'Verificado on-chain',
+                
+                footer_about: 'Sobre',
+                footer_swoosh: 'Swoosh',
+                footer_careers: 'Carreiras',
+                footer_telegram: 'Telegram',
+                footer_twitter: 'Twitter',
+                footer_disclaimer: '⚠️ <strong>NIKE</strong> é um token SPL independente (Networked Interoperable Key Exchange). Não afiliado à Nike Inc. O token faz parte do ecossistema BYT e serve como token de utilidade para interoperabilidade entre cadeias. Todos os nomes de marcas são abreviações fictícias usadas no ecossistema BYT.'
+            },
+            ja: {
+                nav_about: '概要',
+                nav_swoosh: 'Swoosh',
+                nav_careers: 'キャリア',
+                nav_platform: 'プラットフォーム',
+                nav_staking: 'ステーキング',
+                wallet_btn: 'ウォレット接続',
+                
+                hero_badge: '⚡ トークン化しよう',
+                hero_subtitle: 'NIKE トークン — バーチャルスニーカーと Swoosh プラットフォームへのゲートウェイ',
+                stat_price: 'NIKE 価格',
+                stat_mcap: '時価総額',
+                stat_holders: '保有者',
+                stat_liquidity: '流動性',
+                
+                about_title: 'NIKE — <span>スニーカーではない</span>',
+                about_desc: 'BYT エコシステムのスポーツトークンで、バーチャルスニーカーデザイン、Swoosh プラットフォーム、デジタルコミュニティを備えています。イノベーションと動きを重視するアスリート、クリエイター、コレクターのために構築されました。',
+                feature_sneakers: 'バーチャルスニーカー',
+                feature_cocreation: '共創',
+                feature_swoosh: 'Swoosh プラットフォーム',
+                feature_rewards: 'アスリート報酬',
+                
+                ecosystem_title: 'BYT <span>エコシステム</span>',
+                ecosystem_desc: '1つのエコシステムに12のブランドトークン',
+                
+                swoosh_title: '<span>Swoosh</span> プラットフォーム',
+                swoosh_desc: 'バーチャルスニーカーを作成、収集、収益化',
+                swoosh_card1_title: 'デザイン',
+                swoosh_card1_desc: 'Swoosh ツールを使用してバーチャルスニーカーを作成。色、素材、スタイルをカスタマイズ。',
+                swoosh_card2_title: '収益',
+                swoosh_card2_desc: 'デザインからロイヤリティを獲得。NIKE トークン保有者はドロップに早期アクセス可能。',
+                swoosh_card3_title: 'プレイ',
+                swoosh_card3_desc: 'ゲームや没入型体験でバーチャルスニーカーを使用。物理製品の引き換え。',
+                
+                staking_title: 'ステーキング <span>NIKE</span>',
+                staking_desc: 'BYT トークンで最大 30% APY を獲得',
+                pool_basic_title: 'ベーシックプール',
+                pool_premium_title: 'プレミアムプール',
+                pool_creator_title: 'クリエイタープール',
+                pool_basic_desc: 'すべての保有者のエントリーレベル',
+                pool_premium_desc: '500 NIKE のステーキングが必要',
+                pool_creator_desc: 'Swoosh デザイナー限定',
+                pool_btn: 'ステーキングする',
+                apy_label: 'APY',
+                
+                liquidity_title: '流動性 <span>プール</span>',
+                liquidity_desc: 'Meteora V2 での実際の流動性',
+                liquidity_label: '流動性',
+                pool_meteora: 'Meteora V2 • 年齢: 4ヶ月',
+                pool_open: 'プールを開く →',
+                
+                contract_title: '📜 コントラクトアドレス',
+                contract_copy: '📋 アドレスをコピー',
+                contract_opensea: 'OpenSea で見る',
+                contract_gecko: 'GeckoTerminal で見る',
+                
+                bonus_title: 'アスリートのために <span>作られた</span>',
+                bonus_desc: 'NIKE トークンはスポーツコミュニティのために設計されています。バーチャルスニーカーから現実世界の体験まで、ブロックチェーン上でスポーツ文化の未来を構築しています。',
+                
+                counter_visitors: 'ユニークビジター',
+                counter_clients: 'アクティブクライアント',
+                counter_since: '2026年から',
+                counter_verified: 'オンチェーン検証済み',
+                
+                footer_about: '概要',
+                footer_swoosh: 'Swoosh',
+                footer_careers: 'キャリア',
+                footer_telegram: 'Telegram',
+                footer_twitter: 'Twitter',
+                footer_disclaimer: '⚠️ <strong>NIKE</strong> は独立した SPL トークン（ネットワーク相互運用キー交換）です。Nike Inc. とは無関係です。このトークンは BYT エコシステムの一部であり、クロスチェーン相互運用性のためのユーティリティトークンとして機能します。すべてのブランド名は BYT エコシステム内で使用される架空の略称です。'
+            },
+            ar: {
+                nav_about: 'حول',
+                nav_swoosh: 'Swoosh',
+                nav_careers: 'وظائف',
+                nav_platform: 'المنصة',
+                nav_staking: 'ستيكينغ',
+                wallet_btn: 'ربط المحفظة',
+                
+                hero_badge: '⚡ رمزها فقط',
+                hero_subtitle: 'رمز NIKE — بوابة إلى الأحذية الرياضية الافتراضية ومنصة Swoosh',
+                stat_price: 'سعر NIKE',
+                stat_mcap: 'القيمة السوقية',
+                stat_holders: 'المالكين',
+                stat_liquidity: 'السيولة',
+                
+                about_title: 'NIKE — <span>ليس حذاء رياضي</span>',
+                about_desc: 'الرمز الرياضي لنظام BYT البيئي مع تصميم أحذية رياضية افتراضية ومنصة Swoosh ومجتمع رقمي. تم بناؤه للرياضيين والمبدعين وهواة الجمع الذين يقدرون الابتكار والحركة.',
+                feature_sneakers: 'أحذية رياضية افتراضية',
+                feature_cocreation: 'الإبداع المشترك',
+                feature_swoosh: 'منصة Swoosh',
+                feature_rewards: 'مكافآت الرياضيين',
+                
+                ecosystem_title: 'النظام البيئي <span>BYT</span>',
+                ecosystem_desc: '12 رمزاً للعلامات التجارية في نظام بيئي واحد',
+                
+                swoosh_title: 'منصة <span>Swoosh</span>',
+                swoosh_desc: 'أنشئ واجمع واربح من الأحذية الرياضية الافتراضية',
+                swoosh_card1_title: 'التصميم',
+                swoosh_card1_desc: 'أنشئ أحذية رياضية افتراضية باستخدام أدوات Swoosh. خصص الألوان والمواد والأنماط.',
+                swoosh_card2_title: 'الربح',
+                swoosh_card2_desc: 'احصل على إتاوات من تصاميمك. يحصل حاملو NIKE على وصول مبكر إلى الإصدارات.',
+                swoosh_card3_title: 'اللعب',
+                swoosh_card3_desc: 'استخدم أحذيتك الرياضية الافتراضية في الألعاب والتجارب الغامرة. استبدال المنتجات المادية.',
+                
+                staking_title: 'ستيكينغ <span>NIKE</span>',
+                staking_desc: 'اربح ما يصل إلى 30% APY في رموز BYT',
+                pool_basic_title: 'المجمع الأساسي',
+                pool_premium_title: 'المجمع المميز',
+                pool_creator_title: 'مجمع المبدعين',
+                pool_basic_desc: 'مستوى الدخول لجميع المالكين',
+                pool_premium_desc: 'يتطلب 500 NIKE في الستيكينغ',
+                pool_creator_desc: 'حصري لمصممي Swoosh',
+                pool_btn: 'ستيك الآن',
+                apy_label: 'APY',
+                
+                liquidity_title: 'مجمع <span>السيولة</span>',
+                liquidity_desc: 'سيولة حقيقية على Meteora V2',
+                liquidity_label: 'سيولة',
+                pool_meteora: 'Meteora V2 • العمر: 4 أشهر',
+                pool_open: 'فتح المجمع →',
+                
+                contract_title: '📜 عنوان العقد',
+                contract_copy: '📋 نسخ العنوان',
+                contract_opensea: 'عرض على OpenSea',
+                contract_gecko: 'عرض على GeckoTerminal',
+                
+                bonus_title: 'مصمم لـ <span>الرياضيين</span>',
+                bonus_desc: 'تم تصميم رمز NIKE للمجتمع الرياضي. من الأحذية الرياضية الافتراضية إلى التجارب الواقعية، نحن نبني مستقبل الثقافة الرياضية على البلوكشين.',
+                
+                counter_visitors: 'زوار فريدون',
+                counter_clients: 'عملاء نشطون',
+                counter_since: 'منذ 2026',
+                counter_verified: 'تم التحقق على السلسلة',
+                
+                footer_about: 'حول',
+                footer_swoosh: 'Swoosh',
+                footer_careers: 'وظائف',
+                footer_telegram: 'تيليغرام',
+                footer_twitter: 'تويتر',
+                footer_disclaimer: '⚠️ <strong>NIKE</strong> هو رمز SPL مستقل (Networked Interoperable Key Exchange). غير تابع لـ Nike Inc. الرمز جزء من نظام BYT البيئي ويعمل كرمز منفعي للتشغيل البيني عبر السلاسل. جميع أسماء العلامات التجارية هي اختصارات خيالية تستخدم في نظام BYT البيئي.'
+            }
+        };
+
+        // Функция перевода
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = translations[lang][key];
+                    } else {
+                        el.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+            
+            // Сохраняем язык в localStorage
+            localStorage.setItem('nike_lang', lang);
+        }
+
+        // Переключение языка
+        document.getElementById('langSelect').addEventListener('change', function() {
+            changeLanguage(this.value);
+        });
+
+        // Загрузка сохранённого языка
+        const savedLang = localStorage.getItem('nike_lang') || 'en';
+        document.getElementById('langSelect').value = savedLang;
+        changeLanguage(savedLang);
+
+        // ============================================================
+        // ===== ОСТАЛЬНЫЕ СКРИПТЫ =====
+        // ============================================================
+
         // Прозрачный хедер
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
@@ -527,16 +1215,6 @@
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
-            }
-        });
-
-        // Переключение языка
-        document.getElementById('langSelect').addEventListener('change', function() {
-            const lang = this.value;
-            if (lang === 'en') {
-                window.location.href = 'index.html';
-            } else {
-                window.location.href = 'index_' + lang + '.html';
             }
         });
 
@@ -559,7 +1237,6 @@
         }
     </script>
     
-    <!-- Подключаем общий счётчик -->
     <script src="counter.js"></script>
 </body>
 </html>
