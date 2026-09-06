@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NKE — Swoosh Platform</title>
+    <title>NIKE — Swoosh Platform</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,18 +39,28 @@
         .counter-number { font-size: 48px; font-weight: 800; color: #FF3B30; }
         .counter-label { font-size: 12px; text-transform: uppercase; letter-spacing: 3px; opacity: 0.6; margin-top: 4px; }
         .counter-timestamp { font-size: 10px; opacity: 0.3; margin-top: 8px; font-family: 'Courier New', monospace; }
+        .contract-section { padding: 40px 0; background: #0A0A0A; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .contract-box { max-width: 900px; margin: 0 auto; text-align: center; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
+        .contract-box h3 { font-size: 16px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.6; margin-bottom: 8px; }
+        .contract-box code { font-family: 'Courier New', monospace; font-size: 16px; color: #FF3B30; word-break: break-all; display: block; margin: 12px 0; padding: 12px; background: rgba(0,0,0,0.3); border-radius: 4px; border: 1px solid rgba(255,59,48,0.2); }
+        .contract-box .copy-btn { background: #FF3B30; border: none; color: #0A0A0A; padding: 6px 20px; border-radius: 4px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+        .contract-box .copy-btn:hover { background: #ff6b63; }
+        .contract-box .links { margin-top: 12px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .contract-box .links a { font-size: 13px; color: #FF3B30; text-decoration: underline; opacity: 0.7; transition: opacity 0.3s; }
+        .contract-box .links a:hover { opacity: 1; }
         @media (max-width: 768px) {
             .container { padding: 20px; }
             .page-title { font-size: 36px; }
             .swoosh-grid { grid-template-columns: 1fr; }
             .counter-grid { grid-template-columns: 1fr; gap: 20px; }
             .nav a { margin-left: 16px; font-size: 11px; }
+            .contract-box code { font-size: 13px; }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <a href="index.html" class="logo">NKE<span>.</span></a>
+        <a href="index.html" class="logo">NIKE<span>.</span></a>
         <nav class="nav">
             <a href="about.html">About</a>
             <a href="swoosh.html">Swoosh</a>
@@ -68,26 +78,41 @@
             <div class="swoosh-card">
                 <div class="icon">👟</div>
                 <h3>Virtual Design Studio</h3>
-                <p>Create custom virtual sneakers using Swoosh tools. Customize colors, materials, and styles [citation:6].</p>
+                <p>Create custom virtual sneakers using Swoosh tools. Customize colors, materials, and styles.</p>
             </div>
             <div class="swoosh-card">
                 <div class="icon">💰</div>
                 <h3>Royalty System</h3>
-                <p>Earn up to 10% royalties from your designs. NKE token holders get exclusive early access [citation:12].</p>
+                <p>Earn up to 10% royalties from your designs. NIKE token holders get exclusive early access.</p>
             </div>
             <div class="swoosh-card">
                 <div class="icon">🏆</div>
                 <h3>Community Challenges</h3>
-                <p>Compete in design challenges. Winners co-create official Nike virtual products [citation:3].</p>
+                <p>Compete in design challenges. Winners co-create official NIKE virtual products.</p>
             </div>
             <div class="swoosh-card">
                 <div class="icon">🎮</div>
                 <h3>Metaverse Integration</h3>
-                <p>Use your virtual sneakers in games and immersive experiences. Physical product redemption coming 2027 [citation:12].</p>
+                <p>Use your virtual sneakers in games and immersive experiences. Physical product redemption coming 2027.</p>
             </div>
         </div>
         <a href="index.html" class="back-link">← Back to Home</a>
     </div>
+
+    <!-- CONTRACT ADDRESS -->
+    <section class="contract-section">
+        <div class="container">
+            <div class="contract-box">
+                <h3>📜 Contract Address</h3>
+                <code id="contractAddressSwoosh">3Z629ngKkUVg6CthJumpPbQSi4dNPjjh5G88jiTrpJxY</code>
+                <button class="copy-btn" onclick="copyAddressSwoosh()">📋 Copy Address</button>
+                <div class="links">
+                    <a href="https://opensea.io/token/solana/3Z629ngKkUVg6CthJumpPbQSi4dNPjjh5G88jiTrpJxY" target="_blank">View on OpenSea</a>
+                    <a href="https://www.geckoterminal.com/solana/pools/BwdGxpLBghWXvqdVr83PdPJG94VAfGMWPyv7WzLb1xsN" target="_blank">View on GeckoTerminal</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- COUNTER -->
     <section class="counter-section">
@@ -110,20 +135,34 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">NKE<span>.</span></div>
+                <div class="footer-brand">NIKE<span>.</span></div>
                 <div class="footer-links">
                     <a href="about.html">About</a>
                     <a href="swoosh.html">Swoosh</a>
                     <a href="careers.html">Careers</a>
-                    <a href="https://t.me/nke_token" target="_blank">Telegram</a>
+                    <a href="https://t.me/nike_token" target="_blank">Telegram</a>
                 </div>
             </div>
             <div class="footer-disclaimer">
-                ⚠️ NKE is an independent SPL token. Not affiliated with Nike Inc.
+                ⚠️ <strong>NIKE</strong> is an independent SPL token (Networked Interoperable Key Exchange). 
+                Not affiliated with Nike Inc. The token is part of the BYT ecosystem.
             </div>
         </div>
     </footer>
 
+    <script>
+        function copyAddressSwoosh() {
+            const address = document.getElementById('contractAddressSwoosh').textContent;
+            navigator.clipboard.writeText(address).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const originalText = btn.textContent;
+                btn.textContent = '✅ Copied!';
+                setTimeout(() => { btn.textContent = originalText; }, 2000);
+            }).catch(() => {
+                alert('Press Ctrl+C to copy: ' + address);
+            });
+        }
+    </script>
     <script src="counter.js"></script>
 </body>
 </html>
